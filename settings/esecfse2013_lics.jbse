@@ -1,0 +1,43 @@
+resolve begin
+-- abstract types are resolved to suitable concrete ones
+instanceof java/util/List expands to instanceof esecfse2013/LinkedList_LICS triggers esecfse2013/LinkedList_LICS:(Lesecfse2013/LinkedList_LICS;)V:_got_LinkedList:{$REF},
+
+-- a possible assumption on the input
+--{ROOT}:list instanceof java/util/List not null,
+
+-- all the elements in the input list have class java.lang.Integer
+{ROOT}:list/header(/next|/previous)+/element instanceof java/lang/Object not null,
+{ROOT}:list/header(/next|/previous)+/element instanceof java/lang/Object expands to instanceof java/lang/Integer,
+{ROOT}:list/header(/next|/previous)+/element instanceof java/lang/Object aliases nothing,
+
+-- follows the rep invariant for esecfse2013/LinkedList_LICS: 
+-- (1) header exist and is fresh
+{R_ANY}/header instanceof esecfse2013/LinkedList_LICS$Entry not null,
+{R_ANY}/header instanceof esecfse2013/LinkedList_LICS$Entry aliases nothing,
+
+-- (2) header has no element
+{R_ANY}/header/element instanceof java/lang/Object expands to nothing,
+{R_ANY}/header/element instanceof java/lang/Object aliases nothing,
+
+-- (3) all entries must have a next and a previous
+{R_ANY}/header(/next|/previous)* instanceof esecfse2013/LinkedList_LICS$Entry not null,
+{R_ANY}/header(/next|/previous)* instanceof esecfse2013/LinkedList_LICS$Entry expands to instanceof esecfse2013/LinkedList_LICS$Entry triggers esecfse2013/LinkedList_LICS$Entry:(Lesecfse2013/LinkedList_LICS$Entry;)V:_got_LinkedList_Entry:{$REF},
+
+-- (4) for all entries e, e.next.previous == e and e.previous.next == e (i.e., 
+-- nodes are expanded only on the left as header(.previous)+ or on the right
+-- as header(/next)+
+{R_ANY}/header(/next)+/previous instanceof esecfse2013/LinkedList_LICS$Entry expands to nothing,
+{R_ANY}/header(/next)+/previous instanceof esecfse2013/LinkedList_LICS$Entry aliases {$REF}/{UP}/{UP},
+{R_ANY}/header(/previous)+/next instanceof esecfse2013/LinkedList_LICS$Entry expands to nothing,
+{R_ANY}/header(/previous)+/next instanceof esecfse2013/LinkedList_LICS$Entry aliases {$REF}/{UP}/{UP},
+
+-- (5) the rightmost entry can be expanded to the leftmost one and vice versa;
+-- this includes the degenerate case header.next == header.prev == header (empty list).
+{R_ANY}/header(/next)* instanceof esecfse2013/LinkedList_LICS$Entry aliases max {$R_ANY}/header(/previous)* triggers esecfse2013/LinkedList_LICS$Entry:(Lesecfse2013/LinkedList_LICS$Entry;)V:_handleListClosure:{$REF}/{UP},
+{R_ANY}/header(/previous)* instanceof esecfse2013/LinkedList_LICS$Entry aliases max {$R_ANY}/header(/next)* triggers esecfse2013/LinkedList_LICS$Entry:(Lesecfse2013/LinkedList_LICS$Entry;)V:_handleListClosure:{$REF}/{UP},
+
+-- (6) all the entries in a linked list refer their owner (ghost field)
+{R_ANY}/header(/next|/previous)*/_owner instanceof esecfse2013/LinkedList_LICS not null,
+{R_ANY}/header(/next|/previous)*/_owner instanceof esecfse2013/LinkedList_LICS expands to nothing,
+{R_ANY}/header(/next|/previous)*/_owner instanceof esecfse2013/LinkedList_LICS aliases {$R_ANY}
+end
