@@ -1,9 +1,9 @@
 package smalldemos.ifx;
 
-
 public class IfExample {
 	boolean a, b;
 	public void m(int x) {
+		jbse.meta.Analysis.assume(x > 0);
 		if (x > 0) {
 			a = true;
 		} else {
@@ -15,7 +15,7 @@ public class IfExample {
 		} else {
 			b = false;
 		}
-		jbse.meta.Analysis.ass3rt(a != b);
+		jbse.meta.Analysis.ass3rt(a == b);
 	//two leaves, one with {ROOT}:x > 0 and both a and b true,
 	//and one with {ROOT}:x <= 0 and both a and b false
 	}
