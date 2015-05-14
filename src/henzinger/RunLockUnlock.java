@@ -23,7 +23,7 @@ public class RunLockUnlock {
 	private static final String methodName       = "example"; 
 	private static final String outFile          = examplesHome + "out/runLockUnlock.txt";
 	private static final String flagLock         = "_ERROR_LOCK";
-	private static final String flagUnlock       = "_ERROR_UNOCK";
+	private static final String flagUnlock       = "_ERROR_UNLOCK";
 	private static final ExecutionObserver observerLock = (Engine e) -> {
 		r.out("############# ERROR_LOCK AT TRACE " + e.getCurrentState().getIdentifier());
 		e.stopCurrentTrace();
