@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
+import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 import jbse.apps.settings.ParseException;
 import jbse.apps.settings.SettingsReader;
@@ -45,8 +46,9 @@ public class RunTcas {
 		p.setOutputFileName(outFile);
 		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
 		p.setExternalDecisionProcedurePath(sicstusPath);
-		p.setStepShowMode(StepShowMode.NONE);
+		p.setStepShowMode(StepShowMode.ALL);
+		p.setStateFormatMode(StateFormatMode.TRACE);		
 		//p.setShowDecisionProcedureInteraction(true);
-		p.setShowWarnings(false);
+		//p.setShowWarnings(false);
 	}
 }

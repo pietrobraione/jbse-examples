@@ -29,8 +29,8 @@ public class RunDiverge2 {
 		//p.setExternalDecisionProcedurePath(sicstusPath);
 		p.setStepShowMode(StepShowMode.SOURCE);
 		p.setStateFormatMode(StateFormatMode.TRACE);
-		//p.getRunnerParameters().setHeapScope("diverge_2/Diverge2$Entry", 10);
-		//p.getRunnerParameters().setDepthScope(10);
-		//p.getRunnerParameters().setCountScope(1000);
+		p.setHeapScope("diverge_2/Diverge2$Entry", 10);
+		p.setDepthScope(10);
+		p.setCountScope(1000);
 	}
 }

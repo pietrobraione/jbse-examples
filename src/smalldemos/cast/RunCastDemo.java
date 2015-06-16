@@ -27,6 +27,6 @@ public class RunCastDemo {
 		p.setOutputFileName(outFile);
 		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
 		p.setExternalDecisionProcedurePath(sicstusPath);
-		p.setStepShowMode(StepShowMode.LEAVES);
+		p.setStepShowMode(StepShowMode.ALL);
 	}
 }

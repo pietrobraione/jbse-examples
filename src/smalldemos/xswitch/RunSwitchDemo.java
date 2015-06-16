@@ -28,6 +28,5 @@ public class RunSwitchDemo {
 		p.setExternalDecisionProcedurePath(sicstusPath);
 		p.setShowDecisionProcedureInteraction(false);
 		p.setStepShowMode(StepShowMode.LEAVES);
-		p.setGuided(methodClass, "()V", "e");
 	}
 }

@@ -4,6 +4,7 @@ import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
+import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunIf {
@@ -29,6 +30,8 @@ public class RunIf {
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setExternalDecisionProcedurePath(z3Path);
 		p.setShowDecisionProcedureInteraction(false);
-		p.setStepShowMode(StepShowMode.LEAVES);
+		p.setStepShowMode(StepShowMode.ALL);
+		p.setStateFormatMode(StateFormatMode.FULLTEXT);
+		p.setShowWarnings(false);
 	}
 }

@@ -9,9 +9,9 @@ import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunSwapNode {
 	public static void main(String[] args)	{
-		RunParameters p = new RunParameters();
+		final RunParameters p = new RunParameters();
 		set(p);
-		Run r = new Run(p);
+		final Run r = new Run(p);
 		r.run();
 	}
 

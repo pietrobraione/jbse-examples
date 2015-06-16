@@ -4,6 +4,7 @@ import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
+import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunReflectDemo {
@@ -26,6 +27,7 @@ public class RunReflectDemo {
 		p.setOutputFileName(outFile);
 		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
 		p.setExternalDecisionProcedurePath(sicstusPath);
+		p.setStateFormatMode(StateFormatMode.TRACE);
 		p.setStepShowMode(StepShowMode.ALL);
 	}
 }

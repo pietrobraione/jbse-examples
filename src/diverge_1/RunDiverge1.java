@@ -27,5 +27,6 @@ public class RunDiverge1 {
 		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
 		p.setExternalDecisionProcedurePath(sicstusPath);
 		p.setStepShowMode(StepShowMode.ALL);
+		p.setDepthScope(80);
 	}
 }
