@@ -44,8 +44,12 @@ public class RunTcas {
 		p.addSourcePath(sourcePath);
 		p.setMethodSignature(methodClass, methodParamsSig, methodName);
 		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
-		p.setExternalDecisionProcedurePath(sicstusPath);
+		//p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
+		//p.setExternalDecisionProcedurePath(sicstusPath);
+		p.setDecisionProcedureType(DecisionProcedureType.Z3);
+		p.setExternalDecisionProcedurePath(z3Path);
+		//p.setDecisionProcedureType(DecisionProcedureType.CVC4);
+		//p.setExternalDecisionProcedurePath(cvc4Path);
 		p.setStepShowMode(StepShowMode.ALL);
 		p.setStateFormatMode(StateFormatMode.TRACE);		
 		//p.setShowDecisionProcedureInteraction(true);

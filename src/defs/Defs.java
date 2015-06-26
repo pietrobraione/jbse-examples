@@ -3,7 +3,7 @@ package defs;
 public class Defs {
 	//Customize them.
 	public static final String sicstusPath       = "/usr/local/bin/";
-	public static final String cvc3Path          = "/Users/pietro/cvc3-2.4.1/bin/";
+	public static final String cvc4Path          = "/opt/local/bin/";
 	public static final String z3Path            = "/Users/pietro/bin/";
 
 	//Leave them alone.

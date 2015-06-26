@@ -44,5 +44,8 @@ public class Launcher {
 		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowContradictory(false);
 		p.setOutputFileName(examplesHome + "out/esecfse2013.txt");
+		p.setGuided("esecfse2013/Target", "()V", "g");
+		p.setStepShowMode(StepShowMode.ALL);
+		p.setStateFormatMode(StateFormatMode.TRACE);
 	}
 }
