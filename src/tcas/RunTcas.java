@@ -2,31 +2,16 @@ package tcas;
 
 import static defs.Defs.*;
 
-import java.io.FileNotFoundException;
-
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
-import jbse.apps.settings.ParseException;
-import jbse.apps.settings.SettingsReader;
 
 public class RunTcas {
-	private static final String settingsFile = examplesHome + "settings/tcas.jbse";
-
 	public static void main(String[] args)	{
 		//prepares the parameters
 		final RunParameters p = new RunParameters();
-		try {
-			new SettingsReader(settingsFile).fillRunParameters(p);
-		} catch (FileNotFoundException e) {
-			System.err.println("ERROR: settings file not found.");
-			return;
-		} catch (ParseException e) {
-			System.err.println("ERROR: settings file ill-formed.");
-			return;
-		}
 		set(p);
 
 		//executes the method
@@ -51,7 +36,7 @@ public class RunTcas {
 		//p.setDecisionProcedureType(DecisionProcedureType.CVC4);
 		//p.setExternalDecisionProcedurePath(cvc4Path);
 		p.setStepShowMode(StepShowMode.ALL);
-		p.setStateFormatMode(StateFormatMode.TRACE);		
+		p.setStateFormatMode(StateFormatMode.FULLTEXT);		
 		//p.setShowDecisionProcedureInteraction(true);
 		//p.setShowWarnings(false);
 	}

@@ -1,6 +1,8 @@
 package tcas;
 
+import static jbse.meta.Analysis.assumeClassNotInitialized;
 import static jbse.meta.Analysis.force;
+
 
 /** Tcas.java
  * Original C version:
@@ -173,7 +175,7 @@ private static boolean _OTHEROVER;
 
 	public int alt_sep_test()
 	{ 
-		new Object().equals(this);
+		assumeClassNotInitialized("tcas/Tcas$Constants");
 _ATASTEN = false; 
 _ATASTUPRA = false; 
 _ATASTDOWNRA = false; 

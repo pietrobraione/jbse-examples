@@ -3,6 +3,7 @@ package esecfse2013;
 import static defs.Defs.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
@@ -31,6 +32,9 @@ public class Launcher {
 		} catch (ParseException e) {
 			System.err.println("Error: settings file syntactically ill-formed.");
 			System.exit(2);
+		} catch (IOException e) {
+			System.err.println("Error while closing settings file.");
+			System.exit(2);
 		}
 		
 		p.addClasspath(classPath);
@@ -44,8 +48,8 @@ public class Launcher {
 		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowContradictory(false);
 		p.setOutputFileName(examplesHome + "out/esecfse2013.txt");
-		p.setGuided("esecfse2013/Target", "()V", "g");
-		p.setStepShowMode(StepShowMode.ALL);
-		p.setStateFormatMode(StateFormatMode.TRACE);
+		//p.setGuided("esecfse2013/Target", "()V", "g");
+		//p.setStepShowMode(StepShowMode.ALL);
+		//p.setStateFormatMode(StateFormatMode.TRACE);
 	}
 }
