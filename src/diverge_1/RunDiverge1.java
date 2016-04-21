@@ -1,6 +1,7 @@
 package diverge_1;
 
 import static defs.Defs.*;
+
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;

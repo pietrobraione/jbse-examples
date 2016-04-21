@@ -27,7 +27,7 @@ public class RunSwapNode {
 		p.setOutputFileName(outFile);
 		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
 		p.setExternalDecisionProcedurePath(sicstusPath);
-		p.setStepShowMode(StepShowMode.ALL);
+		p.setStepShowMode(StepShowMode.SUMMARIES);
 		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 	}
 }

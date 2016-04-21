@@ -20,6 +20,7 @@ public class RunTestgen {
 	private static final String methodParamsSig  = "(Ltestgen/Testgen$Node;I)Ltestgen/Testgen$Node;"; 
 	private static final String methodName       = "getNode";
 	private static final String outFile          = examplesHome + "out/TestSuite.java";
+	//private static final String outFile          = examplesHome + "out/runTestgen.txt";
 	
     private static void set(RunParameters p) {
 		p.addClasspath(classPath);
@@ -30,6 +31,7 @@ public class RunTestgen {
         p.setExternalDecisionProcedurePath(z3Path);
         p.setStepShowMode(StepShowMode.LEAVES);
         p.setStateFormatMode(StateFormatMode.JUNIT_TEST);
+        //p.setStateFormatMode(StateFormatMode.FULLTEXT);
         p.setShowWarnings(false);
     }
 }

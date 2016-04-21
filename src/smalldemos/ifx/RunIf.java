@@ -30,8 +30,8 @@ public class RunIf {
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setExternalDecisionProcedurePath(z3Path);
 		p.setShowDecisionProcedureInteraction(false);
-		p.setStepShowMode(StepShowMode.ALL);
-		p.setStateFormatMode(StateFormatMode.FULLTEXT);
+		p.setStepShowMode(StepShowMode.LEAVES);
+		p.setStateFormatMode(StateFormatMode.JUNIT_TEST);
 		p.setShowWarnings(false);
 	}
 }
