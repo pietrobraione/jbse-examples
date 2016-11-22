@@ -26,7 +26,7 @@ public class RunArrayDemo1 {
 		p.addSourcePath(sourcePath);
 		p.setMethodSignature(methodClass, methodParamsSig, methodName);
 		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
+		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setExternalDecisionProcedurePath(sicstusPath);
 		p.setDoSignAnalysis(true);
 		p.setStepShowMode(StepShowMode.ALL);

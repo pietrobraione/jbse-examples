@@ -40,7 +40,7 @@ public class Launcher {
 		p.addClasspath(classPath);
 		p.addSourcePath(sourcePath);
 		p.setExternalDecisionProcedurePath(sicstusPath);
-		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
+		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setDoEqualityAnalysis(true); 
 		p.setDoSignAnalysis(true);
 		p.setMethodSignature("esecfse2013/Target", "(Ljava/util/List;)I", "sum");

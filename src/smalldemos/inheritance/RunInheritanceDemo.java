@@ -24,7 +24,7 @@ public class RunInheritanceDemo {
 		p.addSourcePath(sourcePath);
 		p.setMethodSignature(methodClass, methodParamsSig, methodName);
 		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
+		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setExternalDecisionProcedurePath(sicstusPath);
 		p.setStepShowMode(StepShowMode.ALL);
 	}
