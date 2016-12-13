@@ -2,9 +2,8 @@ package defs;
 
 public class Defs {
 	//Customize them.
-	public static final String sicstusPath       = "/usr/local/bin/sicstus";
 	public static final String cvc4Path          = "/opt/local/bin/cvc4";
-	public static final String z3Path            = "/Users/pietro/bin/z3";
+	public static final String z3Path            = "/opt/local/bin/z3";
 
 	//Leave them alone.
 	public static final String examplesHome      = "./";

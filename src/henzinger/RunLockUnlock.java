@@ -41,7 +41,7 @@ public class RunLockUnlock {
 		p.addExecutionObserver(methodClass, "Z", flagLock, observerLock);
 		p.addExecutionObserver(methodClass, "Z", flagUnlock, observerUnlock);
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(sicstusPath);
+		p.setExternalDecisionProcedurePath(z3Path);
 		p.setStepShowMode(StepShowMode.NONE);
 		p.getRunnerParameters().setDepthScope(20);
 	}

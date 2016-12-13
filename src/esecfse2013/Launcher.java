@@ -39,7 +39,7 @@ public class Launcher {
 		
 		p.addClasspath(classPath);
 		p.addSourcePath(sourcePath);
-		p.setExternalDecisionProcedurePath(sicstusPath);
+		p.setExternalDecisionProcedurePath(z3Path);
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setDoEqualityAnalysis(true); 
 		p.setDoSignAnalysis(true);
@@ -48,7 +48,7 @@ public class Launcher {
 		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowContradictory(false);
 		p.setOutputFileName(examplesHome + "out/esecfse2013.txt");
-		//p.setGuided("esecfse2013/Target", "()V", "g");
+		p.setGuided("esecfse2013/Target", "()V", "g");
 		//p.setStepShowMode(StepShowMode.ALL);
 		//p.setStateFormatMode(StateFormatMode.TRACE);
 	}

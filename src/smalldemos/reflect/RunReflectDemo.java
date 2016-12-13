@@ -26,7 +26,7 @@ public class RunReflectDemo {
 		p.setMethodSignature(methodClass, methodParamsSig, methodName);
 		p.setOutputFileName(outFile);
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(sicstusPath);
+		p.setExternalDecisionProcedurePath(z3Path);
 		p.setStateFormatMode(StateFormatMode.TRACE);
 		p.setStepShowMode(StepShowMode.ALL);
 	}

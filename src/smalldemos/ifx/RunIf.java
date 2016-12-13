@@ -25,8 +25,6 @@ public class RunIf {
 		p.addSourcePath(sourcePath);
 		p.setMethodSignature(methodClass, methodParamsSig, methodName);
 		p.setOutputFileName(outFile);
-		//p.setDecisionProcedure(DecisionProcedureType.SICSTUS);
-		//p.setExternalDecisionProcedurePath(sicstusPath);
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setExternalDecisionProcedurePath(z3Path);
 		p.setShowDecisionProcedureInteraction(false);
