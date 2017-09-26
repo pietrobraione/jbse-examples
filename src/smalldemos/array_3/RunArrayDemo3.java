@@ -26,6 +26,6 @@ public class RunArrayDemo3 {
 		p.setOutputFileName(outFile);
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setExternalDecisionProcedurePath(z3Path);
-		p.setStepShowMode(StepShowMode.ROOT_BRANCHES_LEAVES);
+		p.setStepShowMode(StepShowMode.ALL);
 	}
 }

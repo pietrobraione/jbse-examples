@@ -44,12 +44,10 @@ public class Launcher {
 		p.setDoEqualityAnalysis(true); 
 		p.setDoSignAnalysis(true);
 		p.setMethodSignature("esecfse2013/Target", "(Ljava/util/List;)I", "sum");
-		p.setStepShowMode(StepShowMode.SOURCE);
-		p.setStateFormatMode(StateFormatMode.FULLTEXT);
+		//p.setGuided("esecfse2013/Target", "()V", "g");
+		p.setStepShowMode(StepShowMode.LEAVES);
+		p.setStateFormatMode(StateFormatMode.TRACE);
 		p.setShowContradictory(false);
 		p.setOutputFileName(examplesHome + "out/esecfse2013.txt");
-		p.setGuided("esecfse2013/Target", "()V", "g");
-		//p.setStepShowMode(StepShowMode.ALL);
-		//p.setStateFormatMode(StateFormatMode.TRACE);
 	}
 }

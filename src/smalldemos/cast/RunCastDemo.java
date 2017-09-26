@@ -27,6 +27,6 @@ public class RunCastDemo {
 		p.setOutputFileName(outFile);
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setExternalDecisionProcedurePath(z3Path);
-		p.setStepShowMode(StepShowMode.ALL);
+		p.setStepShowMode(StepShowMode.LEAVES);
 	}
 }

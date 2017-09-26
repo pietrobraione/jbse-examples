@@ -29,7 +29,7 @@ public class RunIf {
 		p.setExternalDecisionProcedurePath(z3Path);
 		p.setShowDecisionProcedureInteraction(false);
 		p.setStepShowMode(StepShowMode.LEAVES);
-		p.setStateFormatMode(StateFormatMode.JUNIT_TEST);
+		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowWarnings(false);
 	}
 }
