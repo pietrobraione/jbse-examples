@@ -1,21 +1,20 @@
 package defs;
 
 public class Defs {
-	//Customize them.
-	public static final String cvc4Path          = "/opt/local/bin/cvc4";
-	public static final String z3Path            = "/opt/local/bin/z3";
+    //Customize them.
+    public static final String CVC4_PATH         = "/opt/local/bin/cvc4";
+    public static final String Z3_PATH           = "/opt/local/bin/z3";
 
-	//Leave them alone.
-	public static final String jbseHome          = "/Users/pietro/git/jbse/";
-	public static final String examplesHome      = "./";
-	public static final String jbseClassPath     = jbseHome + "target/classes/";
-	public static final String jbseSourcePath    = jbseHome + "src/";
-	public static final String jreClassPath      = jbseHome + "data/jre1.8.0/rt.jar";
-	public static final String jreSourcePath     = jbseHome + "data/jre1.8.0/src.zip";
-	public static final String targetClassPath   = examplesHome + "bin/";
-	public static final String targetSourcePath  = examplesHome + "src/";
+    //Leave them alone.
+    public static final String JBSE_HOME         = "/Users/pietro/git/jbse/";
+    public static final String EXAMPLES_HOME     = "./";
+    public static final String JRE_PATH          = JBSE_HOME + "data/jre1.8.0";
+    public static final String JBSE_CLASSPATH    = JBSE_HOME + "target/classes/";
+    public static final String JBSE_SOURCEPATH   = JBSE_HOME + "src/";
+    public static final String TARGET_CLASSPATH  = EXAMPLES_HOME + "bin/";
+    public static final String TARGET_SOURCEPATH = EXAMPLES_HOME + "src/";
 
-	//Leave them alone, or add more stuff.
-	public static final String[] classPath        = { jbseClassPath, jreClassPath, targetClassPath };
-	public static final String[] sourcePath       = { jbseSourcePath, jreSourcePath, targetSourcePath };
+    //Leave them alone, or add more stuff
+    public static final String[] CLASSPATH       = { JBSE_CLASSPATH, TARGET_CLASSPATH };
+    public static final String[] SOURCEPATH      = { JBSE_SOURCEPATH, TARGET_SOURCEPATH };
 }

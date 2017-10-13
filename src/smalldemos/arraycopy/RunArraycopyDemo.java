@@ -1,13 +1,12 @@
-package khurshid;
+package smalldemos.arraycopy;
 
 import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
-import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-public class RunSwapNode {
+public class RunArraycopyDemo {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
         set(p);
@@ -15,10 +14,10 @@ public class RunSwapNode {
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "khurshid/Node"; 
-    private static final String METHOD_DESCRIPTOR = "()Lkhurshid/Node;"; 
-    private static final String METHOD_NAME       = "swapNode"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runSwapNode.txt";
+    private static final String METHOD_CLASS      = "smalldemos/arraycopy/ArraycopyDemo"; 
+    private static final String METHOD_DESCRIPTOR = "([I)V"; 
+    private static final String METHOD_NAME       = "entryPoint"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runArraycopyDemo.txt";
 
     private static void set(RunParameters p) {
         p.setJREPath(JRE_PATH);
@@ -28,7 +27,6 @@ public class RunSwapNode {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.SUMMARIES);
-        p.setStateFormatMode(StateFormatMode.FULLTEXT);
+        p.setStepShowMode(StepShowMode.ALL);
     }
 }

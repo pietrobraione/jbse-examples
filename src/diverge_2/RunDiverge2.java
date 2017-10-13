@@ -8,29 +8,30 @@ import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunDiverge2 {
-	public static void main(String[] args)	{
-		RunParameters p = new RunParameters();
-		set(p);
-		Run r = new Run(p);
-		r.run();
-	}
+    public static void main(String[] args)	{
+        RunParameters p = new RunParameters();
+        set(p);
+        Run r = new Run(p);
+        r.run();
+    }
 
-	private static final String methodClass     = "diverge_2/Diverge2"; 
-	private static final String methodParamsSig = "(I)V"; 
-	private static final String methodName      = "find"; 
-	private static final String outFile         = examplesHome + "out/runDiverge2.txt";
+    private static final String METHOD_CLASS      = "diverge_2/Diverge2"; 
+    private static final String METHOD_DESCRIPTOR = "(I)V"; 
+    private static final String METHOD_NAME       = "find"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runDiverge2.txt";
 
-	private static void set(RunParameters p) {
-		p.addClasspath(classPath);
-		p.addSourcePath(sourcePath);
-		p.setMethodSignature(methodClass, methodParamsSig, methodName);
-		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.ALL_SAT);
-		//p.setExternalDecisionProcedurePath(sicstusPath);
-		p.setStepShowMode(StepShowMode.SOURCE);
-		p.setStateFormatMode(StateFormatMode.TRACE);
-		p.setHeapScope("diverge_2/Diverge2$Entry", 10);
-		p.setDepthScope(10);
-		p.setCountScope(1000);
-	}
+    private static void set(RunParameters p) {
+        p.setJREPath(JRE_PATH);
+        p.addClasspath(CLASSPATH);
+        p.addSourcePath(SOURCEPATH);
+        p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
+        p.setOutputFileName(OUT_FILE);
+        p.setDecisionProcedureType(DecisionProcedureType.ALL_SAT);
+        //p.setExternalDecisionProcedurePath(sicstusPath);
+        p.setStepShowMode(StepShowMode.SOURCE);
+        p.setStateFormatMode(StateFormatMode.TRACE);
+        p.setHeapScope("diverge_2/Diverge2$Entry", 10);
+        p.setDepthScope(10);
+        p.setCountScope(1000);
+    }
 }

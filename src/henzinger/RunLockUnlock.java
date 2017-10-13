@@ -9,40 +9,41 @@ import jbse.jvm.Engine;
 import jbse.jvm.ExecutionObserver;
 
 public class RunLockUnlock {
-	private static Run r;
-	
-	public static void main(String[] args)	{
-		final RunParameters p = new RunParameters();
-		set(p);
-		r = new Run(p);
-		r.run();
-	}
+    private static Run r;
 
-	private static final String methodClass      = "henzinger/LockUnlock"; 
-	private static final String methodParamsSig  = "(I)V"; 
-	private static final String methodName       = "example"; 
-	private static final String outFile          = examplesHome + "out/runLockUnlock.txt";
-	private static final String flagLock         = "_ERROR_LOCK";
-	private static final String flagUnlock       = "_ERROR_UNLOCK";
-	private static final ExecutionObserver observerLock = (Engine e) -> {
-		r.out("############# ERROR_LOCK AT TRACE " + e.getCurrentState().getIdentifier());
-		e.stopCurrentTrace();
-	};
-	private static final ExecutionObserver observerUnlock = (Engine e) -> { 
-		r.out("############# ERROR_UNLOCK AT TRACE " + e.getCurrentState().getIdentifier()); 
-		e.stopCurrentTrace(); 
-	}; 
-	
-	private static void set(RunParameters p) {
-		p.addClasspath(classPath);
-		p.addSourcePath(sourcePath);
-		p.setMethodSignature(methodClass, methodParamsSig, methodName);
-		p.setOutputFileName(outFile);
-		p.addExecutionObserver(methodClass, "Z", flagLock, observerLock);
-		p.addExecutionObserver(methodClass, "Z", flagUnlock, observerUnlock);
-		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(z3Path);
-		p.setStepShowMode(StepShowMode.NONE);
-		p.getRunnerParameters().setDepthScope(20);
-	}
+    public static void main(String[] args)	{
+        final RunParameters p = new RunParameters();
+        set(p);
+        r = new Run(p);
+        r.run();
+    }
+
+    private static final String METHOD_CLASS      = "henzinger/LockUnlock"; 
+    private static final String METHOD_DESCRIPTOR = "(I)V"; 
+    private static final String METHOD_NAME       = "example"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runLockUnlock.txt";
+    private static final String FLAG_LOCK         = "_ERROR_LOCK";
+    private static final String FLAG_UNLOCK       = "_ERROR_UNLOCK";
+    private static final ExecutionObserver OBSERVER_LOCK = (Engine engine) -> {
+        r.out("############# ERROR_LOCK AT TRACE " + engine.getCurrentState().getIdentifier());
+        engine.stopCurrentTrace();
+    };
+    private static final ExecutionObserver observerUnlock = (Engine engine) -> { 
+        r.out("############# ERROR_UNLOCK AT TRACE " + engine.getCurrentState().getIdentifier()); 
+        engine.stopCurrentTrace(); 
+    }; 
+
+    private static void set(RunParameters p) {
+        p.setJREPath(JRE_PATH);
+        p.addClasspath(CLASSPATH);
+        p.addSourcePath(SOURCEPATH);
+        p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
+        p.setOutputFileName(OUT_FILE);
+        p.addExecutionObserver(METHOD_CLASS, "Z", FLAG_LOCK, OBSERVER_LOCK);
+        p.addExecutionObserver(METHOD_CLASS, "Z", FLAG_UNLOCK, observerUnlock);
+        p.setDecisionProcedureType(DecisionProcedureType.Z3);
+        p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setStepShowMode(StepShowMode.NONE);
+        p.getRunnerParameters().setDepthScope(20);
+    }
 }

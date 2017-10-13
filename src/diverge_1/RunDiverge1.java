@@ -8,26 +8,27 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunDiverge1 {
-	public static void main(String[] args)	{
-		RunParameters p = new RunParameters();
-		set(p);
-		Run r = new Run(p);
-		r.run();
-	}
+    public static void main(String[] args)	{
+        RunParameters p = new RunParameters();
+        set(p);
+        Run r = new Run(p);
+        r.run();
+    }
 
-	private static final String methodClass     = "diverge_1/Diverge1"; 
-	private static final String methodParamsSig = "(I)V"; 
-	private static final String methodName      = "m"; 
-	private static final String outFile         = examplesHome + "out/runDiverge1.txt";
+    private static final String METHOD_CLASS      = "diverge_1/Diverge1"; 
+    private static final String METHOD_DESCRIPTOR = "(I)V"; 
+    private static final String METHOD_NAME       = "m"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runDiverge1.txt";
 
-	private static void set(RunParameters p) {
-		p.addClasspath(classPath);
-		p.addSourcePath(sourcePath);
-		p.setMethodSignature(methodClass, methodParamsSig, methodName);
-		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(z3Path);
-		p.setStepShowMode(StepShowMode.ALL);
-		p.setDepthScope(80);
-	}
+    private static void set(RunParameters p) {
+        p.setJREPath(JRE_PATH);
+        p.addClasspath(CLASSPATH);
+        p.addSourcePath(SOURCEPATH);
+        p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
+        p.setOutputFileName(OUT_FILE);
+        p.setDecisionProcedureType(DecisionProcedureType.Z3);
+        p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setStepShowMode(StepShowMode.ALL);
+        p.setDepthScope(80);
+    }
 }

@@ -8,28 +8,29 @@ import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunIf {
-	public static void main(String[] args)	{
-		final RunParameters p = new RunParameters();
-		set(p);
-		final Run r = new Run(p);
-		r.run();
-	}
+    public static void main(String[] args)	{
+        final RunParameters p = new RunParameters();
+        set(p);
+        final Run r = new Run(p);
+        r.run();
+    }
 
-	private static final String methodClass     = "smalldemos/ifx/IfExample"; 
-	private static final String methodParamsSig = "(I)V"; 
-	private static final String methodName      = "m"; 
-	private static final String outFile         = examplesHome + "out/runIf_z3.txt";
+    private static final String METHOD_CLASS      = "smalldemos/ifx/IfExample"; 
+    private static final String METHOD_DESCRIPTOR = "(I)V"; 
+    private static final String METHOD_NAME       = "m"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runIf_z3.txt";
 
-	private static void set(RunParameters p) {
-		p.addClasspath(classPath);
-		p.addSourcePath(sourcePath);
-		p.setMethodSignature(methodClass, methodParamsSig, methodName);
-		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(z3Path);
-		p.setShowDecisionProcedureInteraction(false);
-		p.setStepShowMode(StepShowMode.LEAVES);
-		p.setStateFormatMode(StateFormatMode.FULLTEXT);
-		p.setShowWarnings(false);
-	}
+    private static void set(RunParameters p) {
+        p.setJREPath(JRE_PATH);
+        p.addClasspath(CLASSPATH);
+        p.addSourcePath(SOURCEPATH);
+        p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
+        p.setOutputFileName(OUT_FILE);
+        p.setDecisionProcedureType(DecisionProcedureType.Z3);
+        p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setShowDecisionProcedureInteraction(false);
+        p.setStepShowMode(StepShowMode.LEAVES);
+        p.setStateFormatMode(StateFormatMode.FULLTEXT);
+        p.setShowWarnings(false);
+    }
 }

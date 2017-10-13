@@ -7,25 +7,26 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunMetaExample {
-	public static void main(String[] args)	{
-		final RunParameters p = new RunParameters();
-		set(p);
-		final Run r = new Run(p);
-		r.run();
-	}
+    public static void main(String[] args)	{
+        final RunParameters p = new RunParameters();
+        set(p);
+        final Run r = new Run(p);
+        r.run();
+    }
 
-	private static final String methodClass     = "smalldemos/meta/MetaExample"; 
-	private static final String methodParamsSig = "(I)I"; 
-	private static final String methodName      = "f"; 
-	private static final String outFile         = examplesHome + "out/runMetaExample.txt";
+    private static final String METHOD_CLASS      = "smalldemos/meta/MetaExample"; 
+    private static final String METHOD_DESCRIPTOR = "(I)I"; 
+    private static final String METHOD_NAME       = "f"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runMetaExample.txt";
 
-	private static void set(RunParameters p) {
-		p.addClasspath(classPath);
-		p.addSourcePath(sourcePath);
-		p.setMethodSignature(methodClass, methodParamsSig, methodName);
-		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(z3Path);
-		p.setStepShowMode(StepShowMode.LEAVES);
-	}
+    private static void set(RunParameters p) {
+        p.setJREPath(JRE_PATH);
+        p.addClasspath(CLASSPATH);
+        p.addSourcePath(SOURCEPATH);
+        p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
+        p.setOutputFileName(OUT_FILE);
+        p.setDecisionProcedureType(DecisionProcedureType.Z3);
+        p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setStepShowMode(StepShowMode.LEAVES);
+    }
 }

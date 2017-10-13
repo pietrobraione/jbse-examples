@@ -9,35 +9,27 @@ import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunTcas {
-	public static void main(String[] args)	{
-		//prepares the parameters
-		final RunParameters p = new RunParameters();
-		set(p);
+    public static void main(String[] args)	{
+        final RunParameters p = new RunParameters();
+        set(p);
+        final Run r = new Run(p);
+        r.run();
+    }
 
-		//executes the method
-		final Run r = new Run(p);
-		r.run();
-	}
+    private static final String METHOD_CLASS      = "tcas/Tcas"; 
+    private static final String METHOD_DESCRIPTOR = "()I"; 
+    private static final String METHOD_NAME       = "alt_sep_test"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runTcas.txt";
 
-	private static final String methodClass     = "tcas/Tcas"; 
-	private static final String methodParamsSig = "()I"; 
-	private static final String methodName      = "alt_sep_test"; 
-	private static final String outFile         = examplesHome + "out/runTcas.txt";
-
-	private static void set(RunParameters p) {
-		p.addClasspath(classPath);
-		p.addSourcePath(sourcePath);
-		p.setMethodSignature(methodClass, methodParamsSig, methodName);
-		p.setOutputFileName(outFile);
-		//p.setDecisionProcedureType(DecisionProcedureType.SICSTUS);
-		//p.setExternalDecisionProcedurePath(sicstusPath);
-		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(z3Path);
-		//p.setDecisionProcedureType(DecisionProcedureType.CVC4);
-		//p.setExternalDecisionProcedurePath(cvc4Path);
-		p.setStepShowMode(StepShowMode.ALL);
-		p.setStateFormatMode(StateFormatMode.FULLTEXT);		
-		//p.setShowDecisionProcedureInteraction(true);
-		//p.setShowWarnings(false);
-	}
+    private static void set(RunParameters p) {
+        p.setJREPath(JRE_PATH);
+        p.addClasspath(CLASSPATH);
+        p.addSourcePath(SOURCEPATH);
+        p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
+        p.setOutputFileName(OUT_FILE);
+        p.setDecisionProcedureType(DecisionProcedureType.Z3);
+        p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setStepShowMode(StepShowMode.ALL);
+        p.setStateFormatMode(StateFormatMode.FULLTEXT);		
+    }
 }

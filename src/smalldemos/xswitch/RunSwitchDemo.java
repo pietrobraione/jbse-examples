@@ -7,26 +7,27 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunSwitchDemo {
-	public static void main(String[] args)	{
-		RunParameters p = new RunParameters();
-		set(p);
-		Run r = new Run(p);
-		r.run();
-	}
+    public static void main(String[] args)	{
+        RunParameters p = new RunParameters();
+        set(p);
+        Run r = new Run(p);
+        r.run();
+    }
 
-	private static final String methodClass      = "smalldemos/xswitch/SwitchDemo"; 
-	private static final String methodParamsSig  = "(I)I"; 
-	private static final String methodName       = "entryPoint"; 
-	private static final String outFile          = examplesHome + "out/runSwitchDemo.txt";
+    private static final String METHOD_CLASS      = "smalldemos/xswitch/SwitchDemo"; 
+    private static final String METHOD_DESCRIPTOR = "(I)I"; 
+    private static final String METHOD_NAME       = "entryPoint"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runSwitchDemo.txt";
 
-	private static void set(RunParameters p) {
-		p.addClasspath(classPath);
-		p.addSourcePath(sourcePath);
-		p.setMethodSignature(methodClass, methodParamsSig, methodName);
-		p.setOutputFileName(outFile);
-		p.setDecisionProcedureType(DecisionProcedureType.Z3);
-		p.setExternalDecisionProcedurePath(z3Path);
-		p.setShowDecisionProcedureInteraction(false);
-		p.setStepShowMode(StepShowMode.LEAVES);
-	}
+    private static void set(RunParameters p) {
+        p.setJREPath(JRE_PATH);
+        p.addClasspath(CLASSPATH);
+        p.addSourcePath(SOURCEPATH);
+        p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
+        p.setOutputFileName(OUT_FILE);
+        p.setDecisionProcedureType(DecisionProcedureType.Z3);
+        p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setShowDecisionProcedureInteraction(false);
+        p.setStepShowMode(StepShowMode.LEAVES);
+    }
 }
