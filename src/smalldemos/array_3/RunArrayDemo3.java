@@ -20,8 +20,8 @@ public class RunArrayDemo3 {
     private static final String OUT_FILE          = EXAMPLES_HOME + "out/runArrayDemo3.txt";
 
     private static void set(RunParameters p) {
-        p.setJREPath(JRE_PATH);
-        p.addClasspath(CLASSPATH);
+        p.setBootPath(JRE_PATH);
+        p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
         p.setOutputFileName(OUT_FILE);

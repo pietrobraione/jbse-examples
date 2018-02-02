@@ -1,10 +1,10 @@
-package smalldemos.reflect;
+package smalldemos.reflect_1;
 
 import static jbse.meta.Analysis.ass3rt;
 
 import java.util.LinkedList;
 
-public class ReflectDemo {
+public class ReflectDemo1 {
     private static final String foo = "foo";
     public static boolean equal;
     public static boolean sameIntern;

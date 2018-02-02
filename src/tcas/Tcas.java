@@ -175,7 +175,7 @@ public class Tcas {
 
     public int alt_sep_test()
     { 
-        assumeClassNotInitialized("tcas/Tcas$Constants");
+        assumeClassNotInitialized(Constants.class);
         _ATASTEN = false; 
         _ATASTUPRA = false; 
         _ATASTDOWNRA = false; 
