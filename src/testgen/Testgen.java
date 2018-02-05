@@ -37,4 +37,18 @@ public class Testgen {
 			}
 		}
 	}
+	
+	public void test() {
+		final Testgen tg = new Testgen();
+		final Testgen.Node node1 = new Node();
+		node1.setInfo(1);
+		final Testgen.Node node2 = new Node();
+		node2.setInfo(2);
+		final Testgen.Node node3 = new Node();
+		node3.setInfo(3);
+		node1.setNext(node3);
+		node2.setNext(node3);
+		tg.setAnotherNode(node2);
+		tg.getNode(node1, -1);
+	}
 }

@@ -10,8 +10,8 @@ public class Defs {
 	public static final String examplesHome      = "./";
 	public static final String jbseClassPath     = jbseHome + "target/classes/";
 	public static final String jbseSourcePath    = jbseHome + "src/";
-	public static final String jreClassPath      = jbseHome + "data/jre1.8.0/rt.jar";
-	public static final String jreSourcePath     = jbseHome + "data/jre1.8.0/src.zip";
+	public static final String jreClassPath      = jbseHome + "data/jre/rt.jar";
+	public static final String jreSourcePath     = jbseHome + "data/jre/src.zip";
 	public static final String targetClassPath   = examplesHome + "bin/";
 	public static final String targetSourcePath  = examplesHome + "src/";
 

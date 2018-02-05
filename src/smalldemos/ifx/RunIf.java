@@ -31,5 +31,7 @@ public class RunIf {
 		p.setStepShowMode(StepShowMode.LEAVES);
 		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowWarnings(false);
+		
+		p.setGuided(methodClass, "driver");
 	}
 }

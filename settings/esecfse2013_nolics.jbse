@@ -5,6 +5,6 @@ instanceof java/util/List expands to instanceof esecfse2013/LinkedList_noLICS,
 -- all the elements in the input list have class java.lang.Integer
 {ROOT}:list/header(/next|/previous)+/element instanceof java/lang/Object not null,
 {ROOT}:list/header(/next|/previous)+/element instanceof java/lang/Object expands to instanceof java/lang/Integer,
-{ROOT}:list/header(/next|/previous)+/element instanceof java/lang/Object aliases instanceof nothing
+{ROOT}:list/header(/next|/previous)+/element instanceof java/lang/Object aliases nothing
 
 end

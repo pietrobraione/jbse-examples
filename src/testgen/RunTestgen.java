@@ -30,8 +30,9 @@ public class RunTestgen {
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(z3Path);
         p.setStepShowMode(StepShowMode.LEAVES);
-        p.setStateFormatMode(StateFormatMode.JUNIT_TEST);
-        //p.setStateFormatMode(StateFormatMode.FULLTEXT);
+        //p.setStateFormatMode(StateFormatMode.JUNIT_TEST);
+        p.setStateFormatMode(StateFormatMode.FULLTEXT);
         p.setShowWarnings(false);
+        p.setGuided(methodClass, "test");
     }
 }

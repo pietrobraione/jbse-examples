@@ -13,24 +13,23 @@ import jbse.apps.run.RunParameters.StepShowMode;
 import jbse.apps.settings.ParseException;
 import jbse.apps.settings.SettingsReader;
 
-public class Launcher {
+public class Launcher_LICS {
 	public static void main(String[] args)	{
-		RunParameters p = new RunParameters();
+		final RunParameters p = new RunParameters();
 		fill(p);
 
-		Run r = new Run(p);
+		final Run r = new Run(p);
 		r.run();
 	}
 	
 	private static void fill(RunParameters p) {
 		try {
 			new SettingsReader(examplesHome + "settings/esecfse2013_lics.jbse").fillRunParameters(p);
-			//new SettingsReader(examplesHome + "settings/esecfse2013_nolics.jbse").fillRunParameters(p);
 		} catch (FileNotFoundException e) {
 			System.err.println("Error: settings file not found.");
 			System.exit(1);
 		} catch (ParseException e) {
-			System.err.println("Error: settings file syntactically ill-formed.");
+			System.err.println("Error: settings file syntactically ill-formed: " + e.getMessage());
 			System.exit(2);
 		} catch (IOException e) {
 			System.err.println("Error while closing settings file.");
@@ -43,10 +42,9 @@ public class Launcher {
 		p.setDecisionProcedureType(DecisionProcedureType.Z3);
 		p.setDoEqualityAnalysis(true); 
 		p.setDoSignAnalysis(true);
-		p.setMethodSignature("esecfse2013/Target", "(Ljava/util/List;)I", "sum");
-		//p.setGuided("esecfse2013/Target", "()V", "g");
+		p.setMethodSignature("esecfse2013/Target_LICS", "(Ljava/util/List;)I", "sum");
 		p.setStepShowMode(StepShowMode.LEAVES);
-		p.setStateFormatMode(StateFormatMode.TRACE);
+		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowContradictory(false);
 		p.setOutputFileName(examplesHome + "out/esecfse2013.txt");
 	}
