@@ -46,6 +46,6 @@ public class Launcher_LICS {
 		p.setStepShowMode(StepShowMode.LEAVES);
 		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowContradictory(false);
-		p.setOutputFileName(examplesHome + "out/esecfse2013.txt");
+		p.setOutputFileName(examplesHome + "out/esecfse2013_LICS.txt");
 	}
 }

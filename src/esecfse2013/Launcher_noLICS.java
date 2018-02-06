@@ -8,6 +8,7 @@ import java.io.IOException;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
+import jbse.apps.run.RunParameters.GuidanceType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 import jbse.apps.settings.ParseException;
@@ -44,9 +45,10 @@ public class Launcher_noLICS {
 		p.setDoSignAnalysis(true);
 		p.setMethodSignature("esecfse2013/Target_noLICS", "(Ljava/util/List;)I", "sum");
 		p.setGuided("esecfse2013/Target_noLICS", "g");
+		p.setGuidanceType(GuidanceType.JDI);
 		p.setStepShowMode(StepShowMode.LEAVES);
 		p.setStateFormatMode(StateFormatMode.FULLTEXT);
 		p.setShowContradictory(false);
-		p.setOutputFileName(examplesHome + "out/esecfse2013.txt");
+		p.setOutputFileName(examplesHome + "out/esecfse2013_noLICS.txt");
 	}
 }
