@@ -7,8 +7,7 @@ public class Defs {
 
     //Leave them alone.
     public static final String JBSE_HOME         = "/Users/pietro/git/jbse/";
-    public static final String EXAMPLES_HOME     = "./";
-    public static final String JRE_PATH          = JBSE_HOME + "data/jre1.8.0";
+    public static final String EXAMPLES_HOME     = "/Users/pietro/git/jbse-examples/";
     public static final String JBSE_CLASSPATH    = JBSE_HOME + "target/classes/";
     public static final String JBSE_SOURCEPATH   = JBSE_HOME + "src/";
     public static final String TARGET_CLASSPATH  = EXAMPLES_HOME + "bin/";

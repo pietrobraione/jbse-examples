@@ -37,7 +37,6 @@ public class Launcher {
             System.exit(2);
         }
 
-        p.setBootPath(JRE_PATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setExternalDecisionProcedurePath(Z3_PATH);

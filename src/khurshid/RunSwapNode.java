@@ -21,7 +21,6 @@ public class RunSwapNode {
     private static final String OUT_FILE          = EXAMPLES_HOME + "out/runSwapNode.txt";
 
     private static void set(RunParameters p) {
-        p.setBootPath(JRE_PATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
@@ -29,6 +28,6 @@ public class RunSwapNode {
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStepShowMode(StepShowMode.SUMMARIES);
-        p.setStateFormatMode(StateFormatMode.FULLTEXT);
+        p.setStateFormatMode(StateFormatMode.TEXT);
     }
 }

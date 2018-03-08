@@ -21,7 +21,6 @@ public class RunIf {
     private static final String OUT_FILE          = EXAMPLES_HOME + "out/runIf_z3.txt";
 
     private static void set(RunParameters p) {
-        p.setBootPath(JRE_PATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
@@ -30,7 +29,8 @@ public class RunIf {
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setShowDecisionProcedureInteraction(false);
         p.setShowSystemClassesInitialization(false);
+        p.setStackDepthShow(2);
         p.setStepShowMode(StepShowMode.LEAVES);
-        p.setStateFormatMode(StateFormatMode.TRACE);
+        p.setStateFormatMode(StateFormatMode.FULLTEXT);
     }
 }

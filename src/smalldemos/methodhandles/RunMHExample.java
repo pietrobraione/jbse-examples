@@ -21,7 +21,6 @@ public class RunMHExample {
     private static final String OUT_FILE          = EXAMPLES_HOME + "out/runMHExample.txt";
 
     private static void set(RunParameters p) {
-        p.setBootPath(JRE_PATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
