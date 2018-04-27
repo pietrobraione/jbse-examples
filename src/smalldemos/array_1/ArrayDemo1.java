@@ -281,9 +281,76 @@ public class ArrayDemo1 {
 		//Object[12]: {
 		//	Class: java/lang/ArrayIndexOutOfBoundsException
 		//	Field[0]: Name: detailMessage, Type: Ljava/lang/String;, Value: null
-		//	Field[1]: Name: backtrace, Type: Ljava/lang/Object;, Value: null
+		//	Field[1]: Name: backtrace, Type: Ljava/lang/Object;, Value: Object[13] (type: L)
 		//	Field[2]: Name: cause, Type: Ljava/lang/Throwable;, Value: null
 		//	Field[3]: Name: stackTrace, Type: [Ljava/lang/StackTraceElement;, Value: null
+		//}
+		//Object[13]: {
+		//	Type: [Ljava/lang/StackTraceElement;
+		//	Length: 2
+		//	Items: {Object[20], Object[23]}
+		//}
+		//Object[14]: {
+		//	Type: [C
+		//	Length: 29
+		//	Items: {"smalldemos.array_1.ArrayDemo1"}
+		//}
+		//Object[15]: {
+		//	Class: java/lang/String
+		//	Field[0]: Name: hash, Type: I, Value: 1661311421 (type: I)
+		//	Field[1]: Name: value, Type: [C, Value: Object[14] (type: L)
+		//	Field[2]: Name: offset, Type: I, Value: 0 (type: I)
+		//	Field[3]: Name: count, Type: I, Value: 29 (type: I)
+		//}
+		//Object[16]: {
+		//	Type: [C
+		//	Length: 15
+		//	Items: {"ArrayDemo1.java"}
+		//}
+		//Object[17]: {
+		//	Class: java/lang/String
+		//	Field[0]: Name: hash, Type: I, Value: -909652869 (type: I)
+		//	Field[1]: Name: value, Type: [C, Value: Object[16] (type: L)
+		//	Field[2]: Name: offset, Type: I, Value: 0 (type: I)
+		//	Field[3]: Name: count, Type: I, Value: 15 (type: I)
+		//}
+		//Object[18]: {
+		//	Type: [C
+		//	Length: 10
+		//	Items: {"entryPoint"}
+		//}
+		//Object[19]: {
+		//	Class: java/lang/String
+		//	Field[0]: Name: hash, Type: I, Value: -1979329474 (type: I)
+		//	Field[1]: Name: value, Type: [C, Value: Object[18] (type: L)
+		//	Field[2]: Name: offset, Type: I, Value: 0 (type: I)
+		//	Field[3]: Name: count, Type: I, Value: 10 (type: I)
+		//}
+		//Object[20]: {
+		//	Class: java/lang/StackTraceElement
+		//	Field[0]: Name: fileName, Type: Ljava/lang/String;, Value: Object[17] (type: L)
+		//	Field[1]: Name: methodName, Type: Ljava/lang/String;, Value: Object[19] (type: L)
+		//	Field[2]: Name: lineNumber, Type: I, Value: 114 (type: I)
+		//	Field[3]: Name: declaringClass, Type: Ljava/lang/String;, Value: Object[15] (type: L)
+		//}
+		//Object[21]: {
+		//	Type: [C
+		//	Length: 2
+		//	Items: {"eM"}
+		//}
+		//Object[22]: {
+		//	Class: java/lang/String
+		//	Field[0]: Name: hash, Type: I, Value: 3208 (type: I)
+		//	Field[1]: Name: value, Type: [C, Value: Object[21] (type: L)
+		//	Field[2]: Name: offset, Type: I, Value: 0 (type: I)
+		//	Field[3]: Name: count, Type: I, Value: 2 (type: I)
+		//}
+		//Object[23]: {
+		//	Class: java/lang/StackTraceElement
+		//	Field[0]: Name: fileName, Type: Ljava/lang/String;, Value: Object[17] (type: L)
+		//	Field[1]: Name: methodName, Type: Ljava/lang/String;, Value: Object[22] (type: L)
+		//	Field[2]: Name: lineNumber, Type: I, Value: 65 (type: I)
+		//	Field[3]: Name: declaringClass, Type: Ljava/lang/String;, Value: Object[15] (type: L)
 		//}
 	}
 }
