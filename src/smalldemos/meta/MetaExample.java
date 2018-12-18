@@ -16,7 +16,6 @@ public class MetaExample {
         return 1;
     }
     //two leaves, both with {ROOT}:x > 0, one returning 0
-    //and one returning 1; there is also one trace violating
-    //assumptions because of the current implementation of 
-    //jbse.meta.Analysis.assume(boolean)
+    //and one returning 1, plus one trace violating an
+    //assumption.
 }

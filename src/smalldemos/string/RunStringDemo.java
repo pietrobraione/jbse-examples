@@ -27,8 +27,7 @@ public class RunStringDemo {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.NONE);
-        p.setStateFormatMode(StateFormatMode.FULLTEXT);
-        p.setShowSystemClassesInitialization(false);
+        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setStepShowMode(StepShowMode.LEAVES);
     }
 }

@@ -28,7 +28,6 @@ public class RunMHExample {
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStateFormatMode(StateFormatMode.TRACE);
-        p.setShowSystemClassesInitialization(true);
         p.setStepShowMode(StepShowMode.ALL);
     }
 }

@@ -27,7 +27,7 @@ public class RunReflectDemo2 {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStateFormatMode(StateFormatMode.FULLTEXT);
-        p.setStepShowMode(StepShowMode.LEAVES);
+        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setStepShowMode(StepShowMode.ALL);
     }
 }

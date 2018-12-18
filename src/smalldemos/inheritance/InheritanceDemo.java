@@ -24,4 +24,5 @@ public class InheritanceDemo {
         C c = new C();
         ass3rt(c.foo() == 6);
     }
+    //result: one safe trace
 }

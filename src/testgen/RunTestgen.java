@@ -28,9 +28,9 @@ public class RunTestgen {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.LEAVES);
+        //p.setStateFormatMode(StateFormatMode.TEXT);
         p.setStateFormatMode(StateFormatMode.JUNIT_TEST);
-        //p.setStateFormatMode(StateFormatMode.FULLTEXT);
+        p.setStepShowMode(StepShowMode.LEAVES);
         p.setShowWarnings(false);
     }
 }

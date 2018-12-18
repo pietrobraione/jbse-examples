@@ -19,13 +19,13 @@ public class CastDemo {
     }
 
     private void m2() {
-        //sup == Object[1], which is an instance of ClassSub
+        //sup == an instance of ClassSub
         Object x = new ClassSub();
-        sup = (ClassSub) x;
+        this.sup = (ClassSub) x;
 
         //sub == null
         x = null;
-        sub = (ClassSub) x;
+        this.sub = (ClassSub) x;
 
         //r1 == true
         this.r1 = ((new ClassSub()) instanceof ClassSuper);

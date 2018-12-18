@@ -27,7 +27,7 @@ public class RunInheritanceDemo {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.ALL);
-        p.setStateFormatMode(StateFormatMode.TRACE);
+        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setStepShowMode(StepShowMode.LEAVES);
     }
 }

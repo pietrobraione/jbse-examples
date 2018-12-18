@@ -9,7 +9,7 @@ import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunTcas {
-    public static void main(String[] args)	{
+    public static void main(String[] args) {
         final RunParameters p = new RunParameters();
         set(p);
         final Run r = new Run(p);
@@ -28,7 +28,7 @@ public class RunTcas {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setStateFormatMode(StateFormatMode.TRACE);    
         p.setStepShowMode(StepShowMode.LEAVES);
-        p.setStateFormatMode(StateFormatMode.TRACE);		
     }
 }

@@ -4,6 +4,7 @@ import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
+import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunArrayDemo2 {
@@ -26,6 +27,7 @@ public class RunArrayDemo2 {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
+        p.setStateFormatMode(StateFormatMode.TEXT);
         p.setStepShowMode(StepShowMode.LEAVES);
     }
 }

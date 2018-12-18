@@ -235,6 +235,8 @@ public class Tcas {
 
         return alt_sep;
     }
+    
+    //it should yield 180 traces
 
     public static void main(String[] args)
     {

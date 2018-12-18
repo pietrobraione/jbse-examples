@@ -27,7 +27,7 @@ public class RunSwapNode {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.SUMMARIES);
         p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setStepShowMode(StepShowMode.LEAVES);
     }
 }

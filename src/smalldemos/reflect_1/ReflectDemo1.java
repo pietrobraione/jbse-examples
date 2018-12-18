@@ -38,4 +38,5 @@ public class ReflectDemo1 {
         strings();
         classes();
     }
+    //one safe trace
 }

@@ -19,6 +19,5 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>sf.eclipse.javacc.javaccnature</nature>
-		<nature>InCode.inCodeNature</nature>
 	</natures>
 </projectDescription>

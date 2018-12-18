@@ -9,9 +9,9 @@ import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunDiverge2 {
     public static void main(String[] args)	{
-        RunParameters p = new RunParameters();
+        final RunParameters p = new RunParameters();
         set(p);
-        Run r = new Run(p);
+        final Run r = new Run(p);
         r.run();
     }
 
@@ -25,10 +25,10 @@ public class RunDiverge2 {
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
         p.setOutputFileName(OUT_FILE);
-        p.setDecisionProcedureType(DecisionProcedureType.ALL_SAT);
-        //p.setExternalDecisionProcedurePath(sicstusPath);
-        p.setStepShowMode(StepShowMode.SOURCE);
+        p.setDecisionProcedureType(DecisionProcedureType.Z3);
+        p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStateFormatMode(StateFormatMode.TRACE);
+        p.setStepShowMode(StepShowMode.SOURCE);
         p.setHeapScope("diverge_2/Diverge2$Entry", 10);
         p.setDepthScope(10);
         p.setCountScope(1000);

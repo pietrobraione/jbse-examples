@@ -18,8 +18,16 @@ public class Target {
         return tot;
     }
 
-    void g() {
-        List<Integer> l = new LinkedList_LICS<Integer>();
+    void guide_LICS() {
+        final List<Integer> l = new LinkedList_LICS<Integer>();
+        l.add(2);
+        l.add(3);
+        l.add(5);
+        sum(l);
+    }
+
+    void guide_noLICS() {
+        final List<Integer> l = new LinkedList_noLICS<Integer>();
         l.add(2);
         l.add(3);
         l.add(5);

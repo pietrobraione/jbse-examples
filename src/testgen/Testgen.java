@@ -37,4 +37,6 @@ public class Testgen {
             }
         }
     }
+    
+    //it should yield 42 traces
 }

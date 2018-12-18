@@ -1,10 +1,7 @@
 package smalldemos.reflect_2;
 
-import static jbse.meta.Analysis.ass3rt;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.LinkedList;
 
 public class ReflectDemo2 {
     public static class Foo { 
@@ -13,6 +10,7 @@ public class ReflectDemo2 {
     
     public static class Baz { }
     
+    @SuppressWarnings("unused")
     private static Object o;
 
     private static void constructor() throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {

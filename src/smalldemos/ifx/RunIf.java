@@ -3,7 +3,7 @@ package smalldemos.ifx;
 import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
-import jbse.apps.run.RunParameters.DecisionProcedureType;
+import static jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
@@ -27,10 +27,7 @@ public class RunIf {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setShowDecisionProcedureInteraction(false);
-        p.setShowSystemClassesInitialization(false);
-        p.setStackDepthShow(2);
+        p.setStateFormatMode(StateFormatMode.TEXT);
         p.setStepShowMode(StepShowMode.LEAVES);
-        p.setStateFormatMode(StateFormatMode.FULLTEXT);
     }
 }

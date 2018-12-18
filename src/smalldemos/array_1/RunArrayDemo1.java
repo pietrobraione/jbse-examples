@@ -5,6 +5,7 @@ import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
+import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 public class RunArrayDemo1 {
@@ -28,6 +29,7 @@ public class RunArrayDemo1 {
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setDoSignAnalysis(true);
+        p.setStateFormatMode(StateFormatMode.TEXT);
         p.setStepShowMode(StepShowMode.LEAVES);
     }
 }
