@@ -4,7 +4,7 @@ public class Defs {
     //Customize them
     public static final String CVC4_PATH         = "/opt/local/bin/cvc4";
     public static final String Z3_PATH           = "/opt/local/bin/z3";
-    public static final String JBSE_HOME         = "/Users/pietro/git/tardis/jbse/";
+    public static final String JBSE_HOME         = "/Users/pietro/git/jbse/";
     public static final String EXAMPLES_HOME     = "/Users/pietro/git/jbse-examples/";
 
     //Leave them alone
