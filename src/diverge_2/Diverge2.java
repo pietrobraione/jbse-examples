@@ -26,7 +26,7 @@ public class Diverge2 {
      * With unlimited scope symbolic execution diverges as the number 
      * of entries is increased. With limited scope diverges anyways, 
      * but at some points no more entries are added, and divergence
-     * occurs as the case is analyzed where entries form a loop.
+     * occurs when meeting the case where entries form a loop.
      */
     void find(int index) {
         Entry next;

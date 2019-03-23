@@ -28,7 +28,7 @@ public class RunTcas {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStateFormatMode(StateFormatMode.TRACE);    
+        p.setStateFormatMode(StateFormatMode.TRACE); 
         p.setStepShowMode(StepShowMode.LEAVES);
     }
 }

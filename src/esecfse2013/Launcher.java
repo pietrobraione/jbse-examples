@@ -53,10 +53,10 @@ public class Launcher {
         p.setDoEqualityAnalysis(true); 
         p.setDoSignAnalysis(true);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
-        //p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE_LICS);
+        p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE_LICS);
         //p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE_NOLICS);
-        p.setGuidanceType(GuidanceType.JBSE);
-        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setGuidanceType(GuidanceType.JDI);
+        p.setStateFormatMode(StateFormatMode.TRACE);
         p.setStepShowMode(StepShowMode.LEAVES);
         p.setShowContradictory(false);
         p.setOutputFileName(OUT_FILE);

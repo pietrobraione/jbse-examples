@@ -1,4 +1,4 @@
-package symbols;
+package symbols.basic;
 
 import static defs.Defs.*;
 
