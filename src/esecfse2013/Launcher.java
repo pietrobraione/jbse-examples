@@ -22,19 +22,22 @@ public class Launcher {
         r.run();
     }
 
-    private static final String METHOD_CLASS             = "esecfse2013/Target"; 
-    private static final String METHOD_DESCRIPTOR        = "(Ljava/util/List;)I"; 
-    private static final String METHOD_NAME              = "sum";
-    private static final String METHOD_NAME_GUIDE_LICS   = "guide_LICS";
-    private static final String METHOD_NAME_GUIDE_NOLICS = "guide_noLICS";
-    private static final String OUT_FILE                 = EXAMPLES_HOME + "out/esecfse2013.txt";
-    private static final String SETTINGS_FILE_LICS       = EXAMPLES_HOME + "settings/esecfse2013_lics.jbse";
-    private static final String SETTINGS_FILE_NOLICS     = EXAMPLES_HOME + "settings/esecfse2013_nolics.jbse";
+    private static final boolean LICS = true; //choose LICS or noLICS
+    
+    private static final String METHOD_CLASS_LICS    = "esecfse2013/Target_LICS"; 
+    private static final String METHOD_CLASS_NOLICS  = "esecfse2013/Target_noLICS"; 
+    private static final String METHOD_CLASS         = LICS ? METHOD_CLASS_LICS : METHOD_CLASS_NOLICS;
+    private static final String METHOD_DESCRIPTOR    = "(Ljava/util/List;)I"; 
+    private static final String METHOD_NAME          = "sum";
+    private static final String METHOD_NAME_GUIDE    = "guide";
+    private static final String OUT_FILE             = EXAMPLES_HOME + "out/esecfse2013.txt";
+    private static final String SETTINGS_FILE_LICS   = EXAMPLES_HOME + "settings/esecfse2013_lics.jbse";
+    private static final String SETTINGS_FILE_NOLICS = EXAMPLES_HOME + "settings/esecfse2013_nolics.jbse";
+    private static final String SETTINGS_FILE        = LICS ? SETTINGS_FILE_LICS : SETTINGS_FILE_NOLICS;
 
     private static void set(RunParameters p) {
         try {
-            new SettingsReader(SETTINGS_FILE_LICS).fillRunParameters(p);
-            //new SettingsReader(SETTINGS_FILE_NOLICS).fillRunParameters(p);
+            new SettingsReader(SETTINGS_FILE).fillRunParameters(p);
         } catch (FileNotFoundException e) {
             System.err.println("Error: settings file not found.");
             System.exit(1);
@@ -53,12 +56,12 @@ public class Launcher {
         p.setDoEqualityAnalysis(true); 
         p.setDoSignAnalysis(true);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
-        p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE_LICS);
-        //p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE_NOLICS);
-        p.setGuidanceType(GuidanceType.JDI);
         p.setStateFormatMode(StateFormatMode.TRACE);
         p.setStepShowMode(StepShowMode.LEAVES);
         p.setShowContradictory(false);
         p.setOutputFileName(OUT_FILE);
+        
+        //p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE);
+        //p.setGuidanceType(GuidanceType.JDI);
     }
 }

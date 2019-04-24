@@ -28,7 +28,7 @@ public class RunDiverge1 {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setStateFormatMode(StateFormatMode.TRACE);
         p.setStepShowMode(StepShowMode.ALL);
         p.setDepthScope(80);
     }

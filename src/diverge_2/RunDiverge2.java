@@ -28,7 +28,7 @@ public class RunDiverge2 {
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStateFormatMode(StateFormatMode.TRACE);
-        p.setStepShowMode(StepShowMode.SOURCE);
+        p.setStepShowMode(StepShowMode.ALL);
         p.setHeapScope("diverge_2/Diverge2$Entry", 10);
         p.setDepthScope(10);
         p.setCountScope(1000);
