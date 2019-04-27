@@ -2,8 +2,8 @@ package esecfse2013;
 
 import static defs.Defs.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
@@ -38,7 +38,7 @@ public class Launcher {
     private static void set(RunParameters p) {
         try {
             new SettingsReader(SETTINGS_FILE).fillRunParameters(p);
-        } catch (FileNotFoundException e) {
+        } catch (NoSuchFileException e) {
             System.err.println("Error: settings file not found.");
             System.exit(1);
         } catch (ParseException e) {
