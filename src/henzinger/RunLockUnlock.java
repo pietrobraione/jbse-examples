@@ -25,11 +25,11 @@ public class RunLockUnlock {
     private static final String FLAG_ERROR_LOCK   = "_ERROR_LOCK";
     private static final String FLAG_ERROR_UNLOCK = "_ERROR_UNLOCK";
     private static final ExecutionObserver OBSERVER_LOCK = (Engine engine) -> {
-        r.out("############# ERROR_LOCK AT TRACE " + engine.getCurrentState().getIdentifier());
+        r.out("############# ERROR_LOCK AT TRACE " + engine.getCurrentState().getBranchIdentifier());
         engine.stopCurrentTrace();
     };
     private static final ExecutionObserver OBSERVER_UNLOCK = (Engine engine) -> { 
-        r.out("############# ERROR_UNLOCK AT TRACE " + engine.getCurrentState().getIdentifier()); 
+        r.out("############# ERROR_UNLOCK AT TRACE " + engine.getCurrentState().getBranchIdentifier()); 
         engine.stopCurrentTrace(); 
     }; 
 
