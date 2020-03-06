@@ -1,27 +1,27 @@
-package symbols.basic;
+package smalldemos.hash_1;
 
 import static defs.Defs.*;
-
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-public class RunSymbols {
-    public static void main(String[] args) {
+
+public class RunHashDemo1 {
+    public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
-        set(p);
+        setData(p);
         final Run r = new Run(p);
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "symbols/Symbols"; 
-    private static final String METHOD_DESCRIPTOR = "(Ljava/util/LinkedList;D)Ljava/lang/String;"; 
-    private static final String METHOD_NAME       = "m"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runSymbols.txt";
+    private static final String METHOD_CLASS      = "smalldemos/hash_1/HashDemo1"; 
+    private static final String METHOD_DESCRIPTOR = "()V"; 
+    private static final String METHOD_NAME       = "entryPoint"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runHashDemo1.txt";
 
-    private static void set(RunParameters p) {
+    private static void setData(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
@@ -29,10 +29,8 @@ public class RunSymbols {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setShowDecisionProcedureInteraction(false);
-        p.setStateFormatMode(StateFormatMode.TEXT);
         p.setStepShowMode(StepShowMode.LEAVES);
-        p.addUninterpreted("java/util/AbstractCollection", "()Ljava/lang/String;", "toString");
-        p.addUninterpreted("java/util/AbstractList", "(Ljava/lang/Object;)Z", "equals");
+        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setUseHashMapModel(true);
     }
 }

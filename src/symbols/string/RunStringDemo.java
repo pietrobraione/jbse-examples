@@ -42,6 +42,8 @@ public class RunStringDemo {
             System.err.println("Error while closing settings file.");
             System.exit(2);
         }
+        
+        p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);

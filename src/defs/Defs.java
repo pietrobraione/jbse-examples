@@ -12,8 +12,9 @@ public class Defs {
     public static final String JBSE_SOURCEPATH   = JBSE_HOME + "src/main/java/";
     public static final String TARGET_CLASSPATH  = EXAMPLES_HOME + "bin/";
     public static final String TARGET_SOURCEPATH = EXAMPLES_HOME + "src/";
+    public static final String JRE_SOURCEPATH    = System.getProperty("java.home", "") + "src.zip";
 
     //Leave them alone, or add more stuff
-    public static final String[] CLASSPATH       = { JBSE_CLASSPATH, TARGET_CLASSPATH };
-    public static final String[] SOURCEPATH      = { JBSE_SOURCEPATH, TARGET_SOURCEPATH };
+    public static final String[] CLASSPATH       = { TARGET_CLASSPATH };
+    public static final String[] SOURCEPATH      = { JBSE_SOURCEPATH, TARGET_SOURCEPATH, JRE_SOURCEPATH };
 }

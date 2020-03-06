@@ -25,7 +25,7 @@ instanceof java/util/List expands to instanceof esecfse2013/LinkedList_LICS trig
 
 -- (4) for all entries e, e.next.previous == e and e.previous.next == e (i.e., 
 -- nodes are expanded only on the left as header(.previous)+ or on the right
--- as header(/next)+
+-- as header(.next)+
 {R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:next)+.esecfse2013/LinkedList_LICS$Entry:previous instanceof esecfse2013/LinkedList_LICS$Entry expands to nothing;
 {R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:next)+.esecfse2013/LinkedList_LICS$Entry:previous instanceof esecfse2013/LinkedList_LICS$Entry aliases target {$REF}.{UP}.{UP};
 {R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:previous)+.esecfse2013/LinkedList_LICS$Entry:next instanceof esecfse2013/LinkedList_LICS$Entry expands to nothing;

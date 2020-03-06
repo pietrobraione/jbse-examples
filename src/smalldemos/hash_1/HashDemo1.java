@@ -1,14 +1,13 @@
-package smalldemos.hash;
+package smalldemos.hash_1;
 
 import static jbse.meta.Analysis.any;
 
 import java.util.HashMap;
 
-class ClassSuper { }
-class ClassSub extends ClassSuper { }
+import jbse.base.JAVA_MAP;
 
 @SuppressWarnings("unused")
-public class HashDemo {
+public class HashDemo1 {
     private int i;
     public void entryPoint() {
         HashMap<String, Integer> m = new HashMap<>();
@@ -18,9 +17,5 @@ public class HashDemo {
         } else {
             i = m.get(new String("foo"));
         }
-    }
-
-    public static void main(String[] s) {
-        new HashDemo().entryPoint();
     }
 }

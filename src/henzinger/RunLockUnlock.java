@@ -26,14 +26,15 @@ public class RunLockUnlock {
     private static final String FLAG_ERROR_UNLOCK = "_ERROR_UNLOCK";
     private static final ExecutionObserver OBSERVER_LOCK = (Engine engine) -> {
         r.out("############# ERROR_LOCK AT TRACE " + engine.getCurrentState().getBranchIdentifier());
-        engine.stopCurrentTrace();
+        engine.stopCurrentPath();
     };
     private static final ExecutionObserver OBSERVER_UNLOCK = (Engine engine) -> { 
         r.out("############# ERROR_UNLOCK AT TRACE " + engine.getCurrentState().getBranchIdentifier()); 
-        engine.stopCurrentTrace(); 
+        engine.stopCurrentPath(); 
     }; 
 
     private static void set(RunParameters p) {
+        p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);

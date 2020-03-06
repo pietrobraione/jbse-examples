@@ -49,6 +49,7 @@ public class Launcher {
             System.exit(2);
         }
 
+        p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setExternalDecisionProcedurePath(Z3_PATH);
@@ -56,7 +57,7 @@ public class Launcher {
         p.setDoEqualityAnalysis(true); 
         p.setDoSignAnalysis(true);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
-        p.setStateFormatMode(StateFormatMode.TRACE);
+        p.setStateFormatMode(StateFormatMode.PATH);
         p.setStepShowMode(StepShowMode.LEAVES);
         p.setShowContradictory(false);
         p.setOutputFileName(OUT_FILE);

@@ -5,4 +5,4 @@
  * @author pietro
  *
  */
-package smalldemos.hash;
+package smalldemos.hash_2;
