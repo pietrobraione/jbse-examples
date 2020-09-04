@@ -12,4 +12,10 @@ public class HashDemo2 {
     public void entryPoint(HashMap<String, Integer> m) {
         i = m.get("foo");
     }
+    
+    public void test() {
+        HashMap<String, Integer> m = new HashMap<>();
+        m.put("foo", 7);
+        entryPoint(m);
+    }
 }

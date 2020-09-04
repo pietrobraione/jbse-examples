@@ -1,15 +1,14 @@
-package smalldemos.hash_2;
+package smalldemos.hash_3;
 
 import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
-import jbse.apps.run.RunParameters.GuidanceType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
 
-public class RunHashDemo2 {
+public class RunHashDemo3 {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
         setData(p);
@@ -17,11 +16,10 @@ public class RunHashDemo2 {
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "smalldemos/hash_2/HashDemo2"; 
-    private static final String METHOD_DESCRIPTOR = "(Ljava/util/HashMap;)V"; 
+    private static final String METHOD_CLASS      = "smalldemos/hash_3/HashDemo3"; 
+    private static final String METHOD_DESCRIPTOR = "(Ljava/lang/String;Ljava/lang/String;)V"; 
     private static final String METHOD_NAME       = "entryPoint"; 
-    private static final String GUIDANCE_METHOD_NAME       = "test"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runHashDemo2.txt";
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runHashDemo3.txt";
 
     private static void setData(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
@@ -31,10 +29,9 @@ public class RunHashDemo2 {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.LEAVES);
+        p.setStepShowMode(StepShowMode.ALL);
         p.setStateFormatMode(StateFormatMode.TEXT);
         p.setUseHashMapModel(true);
-        p.setGuidanceType(GuidanceType.JDI);
-        //p.setGuided(METHOD_CLASS, GUIDANCE_METHOD_NAME);
+        p.addUninterpreted("java/lang/String", "(Ljava/lang/Object;)Z", "equals");
     }
 }

@@ -1,4 +1,4 @@
-package smalldemos.methodhandles;
+package smalldemos.invokedynamic_1;
 
 import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
@@ -7,7 +7,7 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-public class RunMHExample {
+public class RunInvokeDynamicDemo {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
         set(p);
@@ -15,20 +15,22 @@ public class RunMHExample {
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "smalldemos/methodhandles/MHExample"; 
-    private static final String METHOD_DESCRIPTOR = "(II)V"; 
-    private static final String METHOD_NAME       = "entryPoint"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runMHExample.txt";
+    private static final String METHOD_CLASS      = "smalldemos/invokedynamic_1/InvokeDynamicDemo"; 
+    private static final String METHOD_DESCRIPTOR = "([Ljava/lang/String;)V"; 
+    private static final String METHOD_NAME       = "main"; 
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runInvokeDynamicDemo1.txt";
 
     private static void set(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
+        p.addUserClasspath(EXAMPLES_HOME + "asm-5.1.jar");
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStateFormatMode(StateFormatMode.PATH);
-        p.setStepShowMode(StepShowMode.ALL);
+        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setStepShowMode(StepShowMode.NONE);
+        p.setBypassStandardLoading(false);
     }
 }
