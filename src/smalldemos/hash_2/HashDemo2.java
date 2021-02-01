@@ -4,12 +4,11 @@ import static jbse.meta.Analysis.any;
 
 import java.util.HashMap;
 
-import jbse.base.JAVA_MAP;
-
 @SuppressWarnings("unused")
 public class HashDemo2 {
     private int i;
     public void entryPoint(HashMap<String, Integer> m) {
+        m.remove("foo", 2);
         i = m.get("foo");
     }
     

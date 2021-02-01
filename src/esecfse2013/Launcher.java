@@ -23,6 +23,7 @@ public class Launcher {
     }
 
     private static final boolean LICS = true; //choose LICS or noLICS
+    private static final boolean GUIDE = false; //choose guided execution or not
     
     private static final String METHOD_CLASS_LICS    = "esecfse2013/Target_LICS"; 
     private static final String METHOD_CLASS_NOLICS  = "esecfse2013/Target_noLICS"; 
@@ -62,7 +63,9 @@ public class Launcher {
         p.setShowContradictory(false);
         p.setOutputFileName(OUT_FILE);
         
-        //p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE);
-        //p.setGuidanceType(GuidanceType.JDI);
+        if (GUIDE) {
+        	p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE);
+        	p.setGuidanceType(GuidanceType.JDI);
+        }
     }
 }

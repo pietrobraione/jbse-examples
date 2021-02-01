@@ -4,6 +4,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jbse"/>
-	<classpathentry kind="lib" path="asm-5.1.jar"/>
+	<classpathentry kind="lib" path="lib/asm-5.1.jar"/>
+	<classpathentry kind="lib" path="lib/golo-3.3.0.jar"/>
+	<classpathentry kind="lib" path="golo-bin"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

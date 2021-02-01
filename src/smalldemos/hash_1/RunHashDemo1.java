@@ -31,6 +31,6 @@ public class RunHashDemo1 {
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStepShowMode(StepShowMode.LEAVES);
         p.setStateFormatMode(StateFormatMode.TEXT);
-        p.setUseHashMapModel(true);
+        p.setUseHashMapModels(true);
     }
 }

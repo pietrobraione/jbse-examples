@@ -23,13 +23,12 @@ public class RunInvokeDynamicDemo {
     private static void set(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
-        p.addUserClasspath(EXAMPLES_HOME + "asm-5.1.jar");
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStateFormatMode(StateFormatMode.TEXT);
+        p.setStateFormatMode(StateFormatMode.PATH);
         p.setStepShowMode(StepShowMode.NONE);
         p.setBypassStandardLoading(false);
     }

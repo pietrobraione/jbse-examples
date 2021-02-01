@@ -7,7 +7,6 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-
 public class RunHashDemo3 {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
@@ -29,9 +28,10 @@ public class RunHashDemo3 {
         p.setOutputFileName(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.ALL);
+        p.setStepShowMode(StepShowMode.LEAVES);
         p.setStateFormatMode(StateFormatMode.TEXT);
-        p.setUseHashMapModel(true);
+        p.setShowContradictory(false);
+        p.setUseHashMapModels(true);
         p.addUninterpreted("java/lang/String", "(Ljava/lang/Object;)Z", "equals");
     }
 }

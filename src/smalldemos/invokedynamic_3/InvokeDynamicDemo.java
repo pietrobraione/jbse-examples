@@ -1,33 +1,21 @@
-package smalldemos.invokedynamic_2;
+package smalldemos.invokedynamic_3;
 
 import static org.objectweb.asm.Opcodes.*;
 
 import java.lang.invoke.CallSite;
+import java.lang.invoke.ConstantCallSite;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
-import java.lang.invoke.MutableCallSite;
 import java.lang.reflect.Method;
 
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Handle;
-import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 
 public class InvokeDynamicDemo {
-    private static MutableCallSite cs;
-    private static MethodHandle hw, bw;
-
-    @SuppressWarnings("unused")
-    private static void hw() {
-            System.out.println("Hello, World!");
-            cs.setTarget(bw);
-    }
-
-    @SuppressWarnings("unused")
-    private static void bw() {
-            System.out.println("Bye, World...");
-            cs.setTarget(hw);
+    public static int add(int a, int b) {
+        return a + b;
     }
 
     public static CallSite bootstrapDynamic(MethodHandles.Lookup caller, 
@@ -36,18 +24,13 @@ public class InvokeDynamicDemo {
                                             throws IllegalAccessException, NoSuchMethodException {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         Class<?> thisClass = lookup.lookupClass();
-        hw = lookup.findStatic(thisClass, "hw", 
-                               MethodType.methodType(void.class));
-        if (!type.equals(hw.type())) {
-            hw = hw.asType(type);
-        }
-        bw = lookup.findStatic(thisClass, "bw", 
-                               MethodType.methodType(void.class));
-        if (!type.equals(bw.type())) {
-            bw = bw.asType(type);
+        MethodHandle mh = lookup.findStatic(thisClass, "add", 
+                                            MethodType.methodType(int.class, int.class, int.class));
+        if (!type.equals(mh.type())) {
+            mh = mh.asType(type);
         }
 
-        cs = new MutableCallSite(hw);
+        final ConstantCallSite cs = new ConstantCallSite(mh);
         return cs;
     }
 
@@ -78,31 +61,22 @@ public class InvokeDynamicDemo {
             mv.visitEnd();
         }
         {
-            Label loopEntry = new Label(); 
-            Label loopRepeat = new Label();
             mv = cw.visitMethod(ACC_PUBLIC + ACC_STATIC,
-                    "doDynamicPrint",
-                    "()V",
+                    "doDynamicAdd",
+                    "()I",
                     null,
                     null);
-            mv.visitInsn(ICONST_0);
-            mv.visitVarInsn(ISTORE, 1);
-            mv.visitJumpInsn(GOTO, loopEntry);
-            mv.visitLabel(loopRepeat);
-            mv.visitIincInsn(1, 1);
-            mv.visitLabel(loopEntry);
+            mv.visitInsn(ICONST_1);
+            mv.visitInsn(ICONST_2);
             mv.visitInvokeDynamicInsn(
                             "foo", 
-                            "()V", 
+                            "(II)I", 
                             new Handle(H_INVOKESTATIC, 
-                                            "smalldemos/invokedynamic_2/InvokeDynamicDemo", 
+                                            "smalldemos/invokedynamic_3/InvokeDynamicDemo", 
                                             "bootstrapDynamic", 
                                             "(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;", 
                                             false));
-            mv.visitVarInsn(ILOAD, 1);
-            mv.visitIntInsn(BIPUSH, 10);
-            mv.visitJumpInsn(IF_ICMPLT, loopRepeat);
-            mv.visitInsn(RETURN);
+            mv.visitInsn(IRETURN);
             mv.visitMaxs(2, 2);
             mv.visitEnd();
         }
@@ -129,7 +103,7 @@ public class InvokeDynamicDemo {
     
     public static void main(String[] args) throws Exception {
         final Class<?> c = new DynClassLoader(dump()).loadClass("ID");
-        final Method m = c.getDeclaredMethod("doDynamicPrint");
+        final Method m = c.getDeclaredMethod("doDynamicAdd");
         System.out.println(m.invoke(null)); 
     }
 }

@@ -1,13 +1,13 @@
-package smalldemos.invokedynamic_1;
+package golo.fibonacci;
 
 import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
-import jbse.apps.run.RunParameters.DecisionProcedureType;
+import static jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-public class RunInvokeDynamicDemo {
+public class RunGoloFibonacci {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
         set(p);
@@ -15,10 +15,10 @@ public class RunInvokeDynamicDemo {
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "smalldemos/invokedynamic_1/InvokeDynamicDemo"; 
+    private static final String METHOD_CLASS      = "samples/Fibonacci"; 
     private static final String METHOD_DESCRIPTOR = "([Ljava/lang/String;)V"; 
     private static final String METHOD_NAME       = "main"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runInvokeDynamicDemo1.txt";
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runGoloFibonacci.txt";
 
     private static void set(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
@@ -29,7 +29,9 @@ public class RunInvokeDynamicDemo {
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStateFormatMode(StateFormatMode.TEXT);
-        p.setStepShowMode(StepShowMode.NONE);
-        p.setBypassStandardLoading(false);
+        p.setStepShowMode(StepShowMode.LEAVES);
+        p.addClassInvariantAfterInitializationPattern("org/eclipse/golo/.*");
+        p.addClassInvariantAfterInitializationPattern("gololang/.*");
+        //p.setShowSystemClassesInitialization(true);
     }
 }

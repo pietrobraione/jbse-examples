@@ -3,6 +3,7 @@ package smalldemos.ifx;
 public class IfExample {
     boolean a, b;
     public void m(int x) {
+    	jbse.meta.Analysis.assume(x > 0);
         if (x > 0) {
             a = true;
         } else {

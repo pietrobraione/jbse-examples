@@ -1,4 +1,4 @@
-package smalldemos.invokedynamic_1;
+package smalldemos.invokedynamic_3;
 
 import static defs.Defs.*;
 import jbse.apps.run.RunParameters;
@@ -15,10 +15,10 @@ public class RunInvokeDynamicDemo {
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "smalldemos/invokedynamic_1/InvokeDynamicDemo"; 
+    private static final String METHOD_CLASS      = "smalldemos/invokedynamic_3/InvokeDynamicDemo"; 
     private static final String METHOD_DESCRIPTOR = "([Ljava/lang/String;)V"; 
     private static final String METHOD_NAME       = "main"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runInvokeDynamicDemo1.txt";
+    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runInvokeDynamicDemo3.txt";
 
     private static void set(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);

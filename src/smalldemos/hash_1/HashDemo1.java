@@ -4,8 +4,6 @@ import static jbse.meta.Analysis.any;
 
 import java.util.HashMap;
 
-import jbse.base.JAVA_MAP;
-
 @SuppressWarnings("unused")
 public class HashDemo1 {
     private int i;
