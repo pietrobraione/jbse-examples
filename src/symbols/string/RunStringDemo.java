@@ -4,11 +4,12 @@ import static defs.Defs.*;
 
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
-import jbse.apps.run.RunParameters.GuidanceType;
+//import jbse.apps.run.RunParameters.GuidanceType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 import jbse.apps.settings.ParseException;
@@ -25,8 +26,8 @@ public class RunStringDemo {
     private static final String METHOD_CLASS      = "symbols/string/StringDemo"; 
     private static final String METHOD_DESCRIPTOR = "(Lsymbols/string/StringDemo$C1;Lsymbols/string/StringDemo$C2;)I"; 
     private static final String METHOD_NAME       = "entryPoint"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runSymbolsStringDemo.txt";
-    private static final String SETTINGS_FILE     = EXAMPLES_HOME + "settings/strings.jbse";
+    private static final Path OUT_FILE            = EXAMPLES_HOME.resolve("out/runSymbolsStringDemo.txt");
+    private static final Path SETTINGS_FILE       = EXAMPLES_HOME.resolve("settings/strings.jbse");
 
     private static void set(RunParameters p) {
         try {
@@ -47,7 +48,7 @@ public class RunStringDemo {
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
-        p.setOutputFileName(OUT_FILE);
+        p.setOutputFilePath(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStateFormatMode(StateFormatMode.TEXT);

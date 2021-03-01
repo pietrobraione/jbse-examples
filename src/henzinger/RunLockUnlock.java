@@ -1,6 +1,9 @@
 package henzinger;
 
 import static defs.Defs.*;
+
+import java.nio.file.Path;
+
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
@@ -21,7 +24,7 @@ public class RunLockUnlock {
     private static final String METHOD_CLASS      = "henzinger/LockUnlock"; 
     private static final String METHOD_DESCRIPTOR = "(I)V"; 
     private static final String METHOD_NAME       = "example"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runLockUnlock.txt";
+    private static final Path   OUT_FILE          = EXAMPLES_HOME.resolve("out/runLockUnlock.txt");
     private static final String FLAG_ERROR_LOCK   = "_ERROR_LOCK";
     private static final String FLAG_ERROR_UNLOCK = "_ERROR_UNLOCK";
     private static final ExecutionObserver OBSERVER_LOCK = (Engine engine) -> {
@@ -38,7 +41,7 @@ public class RunLockUnlock {
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
-        p.setOutputFileName(OUT_FILE);
+        p.setOutputFilePath(OUT_FILE);
         p.addExecutionObserver(METHOD_CLASS, "Z", FLAG_ERROR_LOCK, OBSERVER_LOCK);
         p.addExecutionObserver(METHOD_CLASS, "Z", FLAG_ERROR_UNLOCK, OBSERVER_UNLOCK);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);

@@ -2,6 +2,8 @@ package symbols.basic;
 
 import static defs.Defs.*;
 
+import java.nio.file.Path;
+
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
@@ -19,14 +21,14 @@ public class RunSymbols {
     private static final String METHOD_CLASS      = "symbols/Symbols"; 
     private static final String METHOD_DESCRIPTOR = "(Ljava/util/LinkedList;D)Ljava/lang/String;"; 
     private static final String METHOD_NAME       = "m"; 
-    private static final String OUT_FILE          = EXAMPLES_HOME + "out/runSymbols.txt";
+    private static final Path   OUT_FILE          = EXAMPLES_HOME.resolve("out/runSymbols.txt");
 
     private static void set(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
         p.setMethodSignature(METHOD_CLASS, METHOD_DESCRIPTOR, METHOD_NAME);
-        p.setOutputFileName(OUT_FILE);
+        p.setOutputFilePath(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setShowDecisionProcedureInteraction(false);

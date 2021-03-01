@@ -4,6 +4,7 @@ import static defs.Defs.*;
 
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
@@ -31,10 +32,10 @@ public class Launcher {
     private static final String METHOD_DESCRIPTOR    = "(Ljava/util/List;)I"; 
     private static final String METHOD_NAME          = "sum";
     private static final String METHOD_NAME_GUIDE    = "guide";
-    private static final String OUT_FILE             = EXAMPLES_HOME + "out/esecfse2013.txt";
-    private static final String SETTINGS_FILE_LICS   = EXAMPLES_HOME + "settings/esecfse2013_lics.jbse";
-    private static final String SETTINGS_FILE_NOLICS = EXAMPLES_HOME + "settings/esecfse2013_nolics.jbse";
-    private static final String SETTINGS_FILE        = LICS ? SETTINGS_FILE_LICS : SETTINGS_FILE_NOLICS;
+    private static final Path   OUT_FILE             = EXAMPLES_HOME.resolve("out/esecfse2013.txt");
+    private static final Path   SETTINGS_FILE_LICS   = EXAMPLES_HOME.resolve("settings/esecfse2013_lics.jbse");
+    private static final Path   SETTINGS_FILE_NOLICS = EXAMPLES_HOME.resolve("settings/esecfse2013_nolics.jbse");
+    private static final Path   SETTINGS_FILE        = LICS ? SETTINGS_FILE_LICS : SETTINGS_FILE_NOLICS;
 
     private static void set(RunParameters p) {
         try {
@@ -61,7 +62,7 @@ public class Launcher {
         p.setStateFormatMode(StateFormatMode.PATH);
         p.setStepShowMode(StepShowMode.LEAVES);
         p.setShowContradictory(false);
-        p.setOutputFileName(OUT_FILE);
+        p.setOutputFilePath(OUT_FILE);
         
         if (GUIDE) {
         	p.setGuided(METHOD_CLASS, METHOD_NAME_GUIDE);

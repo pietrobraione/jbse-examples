@@ -82,7 +82,8 @@ public class InvokeDynamicDemo {
         return retVal;
     }
 
-    public static byte[] dump() throws Exception {
+    @SuppressWarnings("deprecation")
+	public static byte[] dump() throws Exception {
 
         ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
         MethodVisitor mv;
