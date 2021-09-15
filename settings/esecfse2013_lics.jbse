@@ -33,8 +33,8 @@ instanceof java/util/List expands to instanceof esecfse2013/LinkedList_LICS trig
 
 -- (5) the rightmost entry can be expanded to the leftmost one and vice versa;
 -- this includes the degenerate case header.next == header.prev == header (empty list).
-{R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:next)* instanceof esecfse2013/LinkedList_LICS$Entry aliases target {MAX}{$R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:previous)* triggers esecfse2013/LinkedList_LICS$Entry:(Lesecfse2013/LinkedList_LICS$Entry;)V:_handleListClosure:{$REF}.{UP};
-{R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:previous)* instanceof esecfse2013/LinkedList_LICS$Entry aliases target {MAX}{$R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:next)* triggers esecfse2013/LinkedList_LICS$Entry:(Lesecfse2013/LinkedList_LICS$Entry;)V:_handleListClosure:{$REF}.{UP};
+{R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:next)* instanceof esecfse2013/LinkedList_LICS$Entry aliases target {MAX}{$R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:previous)* triggers esecfse2013/LinkedList_LICS$Entry:(Lesecfse2013/LinkedList_LICS$Entry;)V:_handleListClosure:{$REF};
+{R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:previous)* instanceof esecfse2013/LinkedList_LICS$Entry aliases target {MAX}{$R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:next)* triggers esecfse2013/LinkedList_LICS$Entry:(Lesecfse2013/LinkedList_LICS$Entry;)V:_handleListClosure:{$REF};
 
 -- (6) all the entries in a linked list refer their owner (ghost field)
 {R_ANY}.esecfse2013/LinkedList_LICS:header(.esecfse2013/LinkedList_LICS$Entry:next|.esecfse2013/LinkedList_LICS$Entry:previous)*.esecfse2013/LinkedList_LICS$Entry:_owner instanceof esecfse2013/LinkedList_LICS not null;
