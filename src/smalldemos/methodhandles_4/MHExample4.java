@@ -1,7 +1,7 @@
 package smalldemos.methodhandles_4;
+
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
-import java.lang.invoke.MethodType;
 
 class C {
     int x;

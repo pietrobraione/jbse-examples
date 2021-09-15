@@ -1,24 +1,19 @@
 package smalldemos.generic_2;
 
-import java.util.List;
-
-class A<X> {
-    class B<Y> {
-        F f;
-        class C<Z> {
-            X x;
-            Y y;
-            Z z;
-        }
-    }
-    class F { }
-}
-
-class D {
-    List<? extends Thread> l;
-    void m(A<Integer>.B<Float>.C<Character> c) { 
-        if (!(c.y instanceof Float)) {
+class A {
+    void m(B<C<D>> b) {
+        if (!(b.y[0][2].z instanceof D)) {
             throw new RuntimeException();
         }
     }
 }
+
+class B<Y> {
+    Y[][] y;
+}
+
+class C<Z> {
+    Z z;
+}
+
+class D { };

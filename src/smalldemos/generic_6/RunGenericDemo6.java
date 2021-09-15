@@ -1,4 +1,4 @@
-package smalldemos.generic_2;
+package smalldemos.generic_6;
 
 import static defs.Defs.*;
 
@@ -10,7 +10,7 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-public class RunGenericDemo2 {
+public class RunGenericDemo6 {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
         setData(p);
@@ -18,10 +18,10 @@ public class RunGenericDemo2 {
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "smalldemos/generic_2/A"; 
-    private static final String METHOD_DESCRIPTOR = "(Lsmalldemos/generic_2/B;)V"; 
+    private static final String METHOD_CLASS      = "smalldemos/generic_6/A"; 
+    private static final String METHOD_DESCRIPTOR = "()V"; 
     private static final String METHOD_NAME       = "m"; 
-    private static final Path   OUT_FILE          = EXAMPLES_HOME.resolve("out/runGenericDemo2.txt");
+    private static final Path   OUT_FILE          = EXAMPLES_HOME.resolve("out/runGenericDemo6.txt");
 
     private static void setData(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
@@ -33,5 +33,6 @@ public class RunGenericDemo2 {
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStepShowMode(StepShowMode.LEAVES);
         p.setStateFormatMode(StateFormatMode.TEXT);
+        p.addUninterpreted(METHOD_CLASS, "()Lsmalldemos/generic_6/B;", "f");
     }
 }

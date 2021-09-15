@@ -10,7 +10,6 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-
 public class RunGenericDemo1 {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
@@ -32,7 +31,7 @@ public class RunGenericDemo1 {
         p.setOutputFilePath(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.ALL);
+        p.setStepShowMode(StepShowMode.LEAVES);
         p.setStateFormatMode(StateFormatMode.TEXT);
     }
 }
