@@ -35,7 +35,7 @@ public class RunGuidDemoHash2 {
         p.setStateFormatMode(StateFormatMode.TEXT);
         p.setStepShowMode(StepShowMode.ALL);
         p.setUseHashMapModels(true);
-        //p.addUninterpreted("java/lang/String", "(Ljava/lang/Object;)Z", "equals"); //necessary to avoid misalignment with JBSE guidance, not necessary with JDI guidance
+        p.addUninterpreted("java/lang/String", "(Ljava/lang/Object;)Z", "equals"); //necessary to avoid misalignment with JBSE guidance, not necessary with JDI guidance
         p.setGuided(METHOD_CLASS, "guidanceStart");
         p.setGuidanceType(GuidanceType.JBSE);
     }

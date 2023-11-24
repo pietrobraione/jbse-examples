@@ -1,4 +1,4 @@
-package smalldemos.generic_6;
+package smalldemos.array_4;
 
 import static defs.Defs.*;
 
@@ -10,20 +10,20 @@ import jbse.apps.run.RunParameters.DecisionProcedureType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
 
-public class RunGenericDemo6 {
+public class RunArrayDemo4 {
     public static void main(String[] args)	{
         final RunParameters p = new RunParameters();
-        setData(p);
+        set(p);
         final Run r = new Run(p);
         r.run();
     }
 
-    private static final String METHOD_CLASS      = "smalldemos/generic_6/A"; 
-    private static final String METHOD_DESCRIPTOR = "()V"; 
-    private static final String METHOD_NAME       = "m"; 
-    private static final Path   OUT_FILE          = EXAMPLES_HOME.resolve("out/runGenericDemo6.txt");
+    private static final String METHOD_CLASS      = "smalldemos/array_4/ArrayDemo4"; 
+    private static final String METHOD_DESCRIPTOR = "([III)V"; 
+    private static final String METHOD_NAME       = "entryPoint"; 
+    private static final Path   OUT_FILE          = EXAMPLES_HOME.resolve("out/runArrayDemo4.txt");
 
-    private static void setData(RunParameters p) {
+    private static void set(RunParameters p) {
         p.setJBSELibPath(JBSE_CLASSPATH);
         p.addUserClasspath(CLASSPATH);
         p.addSourcePath(SOURCEPATH);
@@ -31,8 +31,7 @@ public class RunGenericDemo6 {
         p.setOutputFilePath(OUT_FILE);
         p.setDecisionProcedureType(DecisionProcedureType.Z3);
         p.setExternalDecisionProcedurePath(Z3_PATH);
-        p.setStepShowMode(StepShowMode.ALL);
         p.setStateFormatMode(StateFormatMode.TEXT);
-        p.addUninterpreted(METHOD_CLASS, "(Ljava/util/Optional;)Lsmalldemos/generic_6/B;", "f");
+        p.setStepShowMode(StepShowMode.LEAVES);
     }
 }

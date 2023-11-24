@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 public class Defs {
     //Customize them
     public static final Path CVC4_PATH     = Paths.get("/opt", "local", "bin", "cvc4");
-    public static final Path Z3_PATH       = Paths.get("/opt", "local", "bin", "z3");
+    public static final Path Z3_PATH       = Paths.get("/usr", "local", "bin", "z3");
     public static final Path JBSE_HOME     = Paths.get("/Users", "pietro", "git", "jbse");
     public static final Path EXAMPLES_HOME = Paths.get("/Users", "pietro", "git", "jbse-examples");
 

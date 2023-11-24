@@ -33,5 +33,6 @@ public class RunTcas {
         p.setExternalDecisionProcedurePath(Z3_PATH);
         p.setStateFormatMode(StateFormatMode.PATH); 
         p.setStepShowMode(StepShowMode.LEAVES);
+        p.setShowDetailedDecisionProcedureStats(true);
     }
 }

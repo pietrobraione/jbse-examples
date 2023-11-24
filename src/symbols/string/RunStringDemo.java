@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import jbse.apps.run.RunParameters;
 import jbse.apps.run.Run;
 import jbse.apps.run.RunParameters.DecisionProcedureType;
+import jbse.apps.run.RunParameters.GuidanceType;
 //import jbse.apps.run.RunParameters.GuidanceType;
 import jbse.apps.run.RunParameters.StateFormatMode;
 import jbse.apps.run.RunParameters.StepShowMode;
@@ -56,7 +57,7 @@ public class RunStringDemo {
         p.addUninterpreted("symbols/string/StringDemo$C1", "()Ljava/lang/String;", "toString");
         p.addUninterpreted("symbols/string/StringDemo$C2", "()Ljava/lang/String;", "toString");
         p.addUninterpreted("java/lang/String", "(Ljava/lang/Object;)Z", "equals");
-        //p.setGuided("symbols/string/StringDemo", "guidanceStart");
-        //p.setGuidanceType(GuidanceType.JDI);
+        p.setGuided("symbols/string/StringDemo", "guidanceStart");
+        p.setGuidanceType(GuidanceType.JDI);
     }
 }

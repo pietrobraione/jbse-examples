@@ -34,6 +34,13 @@ public class StringDemo {
         }
     }
 
+    /** 
+     * Four leaves: 
+     * 1- s1 != null, s2 != null, s1.equals(s2): return 1
+     * 2- s1 != null, s2 != null, !s1.equals(s2): return 0
+     * 3- s1 != null, s2 == null: NPE
+     * 4- s1 == null: NPE
+     */
     public int entryPoint(C1 o1, C2 o2) {
         final String s1 = o1.toString();
         final String s2 = o2.toString();
@@ -44,9 +51,13 @@ public class StringDemo {
         }
     }
     
+    /**
+     * Follows path 1, returns 1.
+     */
     public void guidanceStart() {
         final C1 o1 = new C1(3, 'a');
         final C2 o2 = new C2("aa", "a");
         entryPoint(o1, o2);
     }
+    
 }
